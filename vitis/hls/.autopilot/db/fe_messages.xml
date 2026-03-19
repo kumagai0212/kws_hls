@@ -1,0 +1,45 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="" msg_id="207-5292" msg_severity="WARNING" msg_loc="cfu_hls.c:24:10" msg_body="unused parameter 'funct3_i'">
+        <args ClangWarningOption="unused-parameter"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="directive:1:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="cfu_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=cfu_hls" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg:12:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="cfu_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="ap_none port=rslt_o" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cfu_hls.c:38:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cfu_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=real_buf type=ram_2p impl=bram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cfu_hls.c:39:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cfu_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=imag_buf type=ram_2p impl=bram" ARG_PragmaType="bind_storage" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cfu_hls.c:56:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cfu_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cfu_hls.c:64:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cfu_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cfu_hls.c:93:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cfu_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cfu_hls.c:94:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cfu_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=real_buf inter false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cfu_hls.c:95:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cfu_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=imag_buf inter false" ARG_PragmaType="dependence" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cfu_hls.c:119:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cfu_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cfu_hls.c:135:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cfu_hls" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="cfu_hls.c:146:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="cfu_hls" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="cfu_hls.c:29:0" msg_body="Unrolling loop 'LOG2_MSB' (cfu_hls.c:145:13) in function 'cfu_hls' completely with a factor of 32">
+        <args Factor="32" LoopLoc="cfu_hls.c:145:13" LoopName="LOG2_MSB"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

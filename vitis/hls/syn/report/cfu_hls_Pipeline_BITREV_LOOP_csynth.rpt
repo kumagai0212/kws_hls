@@ -1,0 +1,162 @@
+
+
+================================================================
+== Vitis HLS Report for 'cfu_hls_Pipeline_BITREV_LOOP'
+================================================================
+* Date:           Sun Mar 15 11:48:31 2026
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        vitis
+* Solution:       hls (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a35t-csg324-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  5.56 ns|  6.514 ns|     1.50 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+------+------+------------------------------------------------+
+    |  Latency (cycles) |   Latency (absolute)  |   Interval  |                    Pipeline                    |
+    |   min   |   max   |    min    |    max    |  min |  max |                      Type                      |
+    +---------+---------+-----------+-----------+------+------+------------------------------------------------+
+    |     6146|     6146|  40.035 us|  40.035 us|  6145|  6145|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+-----------+-----------+------+------+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+        |               |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |   Loop Name   |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- BITREV_LOOP  |     6144|     6144|         3|          3|          1|  2048|       yes|
+        +---------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+----+-------+-------+-----+
+|       Name      | BRAM_18K| DSP|   FF  |  LUT  | URAM|
++-----------------+---------+----+-------+-------+-----+
+|DSP              |        -|   -|      -|      -|    -|
+|Expression       |        -|   -|      0|     57|    -|
+|FIFO             |        -|   -|      -|      -|    -|
+|Instance         |        -|   -|      -|      -|    -|
+|Memory           |        -|   -|      -|      -|    -|
+|Multiplexer      |        -|   -|      0|    104|    -|
+|Register         |        -|   -|    138|      -|    -|
++-----------------+---------+----+-------+-------+-----+
+|Total            |        0|   0|    138|    161|    0|
++-----------------+---------+----+-------+-------+-----+
+|Available        |      100|  90|  41600|  20800|    0|
++-----------------+---------+----+-------+-------+-----+
+|Utilization (%)  |        0|   0|     ~0|     ~0|    0|
++-----------------+---------+----+-------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------+----------+----+---+----+------------+------------+
+    |    Variable Name    | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------+----------+----+---+----+------------+------------+
+    |add_ln63_fu_110_p2   |         +|   0|  0|  19|          12|           1|
+    |icmp_ln63_fu_104_p2  |      icmp|   0|  0|  20|          12|          13|
+    |icmp_ln79_fu_142_p2  |      icmp|   0|  0|  18|          11|          11|
+    +---------------------+----------+----+---+----+------------+------------+
+    |Total                |          |   0|  0|  57|          35|          25|
+    +---------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm                |  17|          4|    1|          4|
+    |ap_done_int              |   9|          2|    1|          2|
+    |ap_sig_allocacmp_x       |   9|          2|   12|         24|
+    |i_fu_40                  |   9|          2|   12|         24|
+    |imag_buf_address1_local  |  17|          4|   11|         44|
+    |imag_buf_d1_local        |  13|          3|   32|         96|
+    |real_buf_address1_local  |  17|          4|   11|         44|
+    |real_buf_d1_local        |  13|          3|   32|         96|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    | 104|         24|  112|        334|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------+----+----+-----+-----------+
+    |           Name          | FF | LUT| Bits| Const Bits|
+    +-------------------------+----+----+-----+-----------+
+    |add_ln63_reg_163         |  12|   0|   12|          0|
+    |ap_CS_fsm                |   3|   0|    3|          0|
+    |ap_done_reg              |   1|   0|    1|          0|
+    |i_fu_40                  |  12|   0|   12|          0|
+    |icmp_ln63_reg_159        |   1|   0|    1|          0|
+    |icmp_ln79_reg_168        |   1|   0|    1|          0|
+    |imag_buf_addr_1_reg_183  |  11|   0|   11|          0|
+    |imag_buf_addr_reg_188    |  11|   0|   11|          0|
+    |real_buf_addr_1_reg_172  |  11|   0|   11|          0|
+    |real_buf_addr_reg_177    |  11|   0|   11|          0|
+    |ti_reg_199               |  32|   0|   32|          0|
+    |tr_reg_194               |  32|   0|   32|          0|
+    +-------------------------+----+----+-----+-----------+
+    |Total                    | 138|   0|  138|          0|
+    +-------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-------------------+-----+-----+------------+------------------------------+--------------+
+|     RTL Ports     | Dir | Bits|  Protocol  |         Source Object        |    C Type    |
++-------------------+-----+-----+------------+------------------------------+--------------+
+|ap_clk             |   in|    1|  ap_ctrl_hs|  cfu_hls_Pipeline_BITREV_LOOP|  return value|
+|ap_start           |   in|    1|  ap_ctrl_hs|  cfu_hls_Pipeline_BITREV_LOOP|  return value|
+|ap_done            |  out|    1|  ap_ctrl_hs|  cfu_hls_Pipeline_BITREV_LOOP|  return value|
+|ap_idle            |  out|    1|  ap_ctrl_hs|  cfu_hls_Pipeline_BITREV_LOOP|  return value|
+|ap_ready           |  out|    1|  ap_ctrl_hs|  cfu_hls_Pipeline_BITREV_LOOP|  return value|
+|real_buf_address0  |  out|   11|   ap_memory|                      real_buf|         array|
+|real_buf_ce0       |  out|    1|   ap_memory|                      real_buf|         array|
+|real_buf_q0        |   in|   32|   ap_memory|                      real_buf|         array|
+|real_buf_address1  |  out|   11|   ap_memory|                      real_buf|         array|
+|real_buf_ce1       |  out|    1|   ap_memory|                      real_buf|         array|
+|real_buf_we1       |  out|    1|   ap_memory|                      real_buf|         array|
+|real_buf_d1        |  out|   32|   ap_memory|                      real_buf|         array|
+|real_buf_q1        |   in|   32|   ap_memory|                      real_buf|         array|
+|imag_buf_address0  |  out|   11|   ap_memory|                      imag_buf|         array|
+|imag_buf_ce0       |  out|    1|   ap_memory|                      imag_buf|         array|
+|imag_buf_q0        |   in|   32|   ap_memory|                      imag_buf|         array|
+|imag_buf_address1  |  out|   11|   ap_memory|                      imag_buf|         array|
+|imag_buf_ce1       |  out|    1|   ap_memory|                      imag_buf|         array|
+|imag_buf_we1       |  out|    1|   ap_memory|                      imag_buf|         array|
+|imag_buf_d1        |  out|   32|   ap_memory|                      imag_buf|         array|
+|imag_buf_q1        |   in|   32|   ap_memory|                      imag_buf|         array|
++-------------------+-----+-----+------------+------------------------------+--------------+
+

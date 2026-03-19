@@ -1,0 +1,13 @@
+<pragmas>
+<pragma file="cfu_hls.c" line="135" pragmaType="pipeline" parentfunction="cfu_hls" off="0" ii="1" rewind="0" style=""/>
+<pragma file="cfu_hls.c" line="146" pragmaType="unroll" parentfunction="cfu_hls" factor="-1" skip_exit_check="0"/>
+<pragma file="cfu_hls.c" line="119" pragmaType="pipeline" parentfunction="cfu_hls" off="0" ii="1" rewind="0" style=""/>
+<pragma file="cfu_hls.c" line="93" pragmaType="pipeline" parentfunction="cfu_hls" off="0" ii="1" rewind="0" style=""/>
+<pragma file="cfu_hls.c" line="64" pragmaType="pipeline" parentfunction="cfu_hls" off="0" ii="1" rewind="0" style=""/>
+<pragma file="cfu_hls.c" line="56" pragmaType="pipeline" parentfunction="cfu_hls" off="0" ii="1" rewind="0" style=""/>
+<pragma file="cfu_hls.c" line="12" pragmaType="interface" parentfunction="cfu_hls" mode="ap_none" port="rslt_o" name="" register="0"/>
+<pragma file="cfu_hls.c" line="38" pragmaType="bind_storage" parentfunction="cfu_hls" op="666" impl="22" latency="-1" variable="cfu_hls.real_buf"/>
+<pragma file="cfu_hls.c" line="39" pragmaType="bind_storage" parentfunction="cfu_hls" op="666" impl="22" latency="-1" variable="cfu_hls.imag_buf"/>
+<pragma file="cfu_hls.c" line="94" pragmaType="dependence" parentfunction="cfu_hls" class="" direction="NODIR" type="inter" distance="0" variable="cfu_hls.real_buf"/>
+<pragma file="cfu_hls.c" line="95" pragmaType="dependence" parentfunction="cfu_hls" class="" direction="NODIR" type="inter" distance="0" variable="cfu_hls.imag_buf"/>
+</pragmas>

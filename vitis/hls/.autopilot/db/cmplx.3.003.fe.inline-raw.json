@@ -1,0 +1,18 @@
+{
+  "0": {
+    "basicblocks": 55,
+    "calls": "",
+    "file": "cfu_hls.c",
+    "fileloc": 23,
+    "instructions": 335,
+    "loads": {
+      "G": 19
+    },
+    "name": "cfu_hls",
+    "stores": {
+      "G": 13,
+      "T": 4
+    },
+    "total_instructions": 335
+  }
+}

@@ -1,0 +1,207 @@
+
+
+================================================================
+== Synthesis Summary Report of 'cfu_hls'
+================================================================
++ General Information: 
+    * Date:           Sun Mar 15 11:48:32 2026
+    * Version:        2024.2 (Build 5238294 on Nov  8 2024)
+    * Project:        vitis
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: artix7
+    * Target device:  xc7a35t-csg324-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +---------------------------------------------+--------+-------+---------+-----------+----------+---------+-------+----------+----------+----------+------------+------------+-----+
+    |                   Modules                   |  Issue |       | Latency |  Latency  | Iteration|         |  Trip |          |          |          |            |            |     |
+    |                   & Loops                   |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count | Pipelined|   BRAM   |    DSP   |     FF     |     LUT    | URAM|
+    +---------------------------------------------+--------+-------+---------+-----------+----------+---------+-------+----------+----------+----------+------------+------------+-----+
+    |+ cfu_hls                                    |  Timing|  -2.54|    37774|  2.495e+05|         -|    37775|      -|        no|  23 (23%)|  20 (22%)|  4537 (10%)|  3140 (15%)|    -|
+    | + cfu_hls_Pipeline_HANN_LOOP                |  Timing|  -1.29|     2056|  1.142e+04|         -|     2056|      -|        no|    2 (2%)|    2 (2%)|   399 (~0%)|   110 (~0%)|    -|
+    |  o HANN_LOOP                                |       -|   4.06|     2054|  1.141e+04|         8|        1|   2048|       yes|         -|         -|           -|           -|    -|
+    | + cfu_hls_Pipeline_BITREV_LOOP              |  Timing|  -2.45|     6146|  4.004e+04|         -|     6146|      -|        no|         -|         -|   138 (~0%)|   161 (~0%)|    -|
+    |  o BITREV_LOOP                              |      II|   4.06|     6144|  4.002e+04|         3|        3|   2048|       yes|         -|         -|           -|           -|    -|
+    | + cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY  |  Timing|  -2.54|    22543|  1.489e+05|         -|    22543|      -|        no|    2 (2%)|    8 (8%)|   1709 (4%)|    999 (4%)|    -|
+    |  o FFT_STAGE_FFT_BUTTERFLY                  |      II|   4.06|    22541|  1.489e+05|        16|        2|  11264|       yes|         -|         -|           -|           -|    -|
+    | + cfu_hls_Pipeline_POWER_LOOP               |  Timing|  -1.29|     1034|  5.745e+03|         -|     1034|      -|        no|         -|    8 (8%)|    745 (1%)|   173 (~0%)|    -|
+    |  o POWER_LOOP                               |       -|   4.06|     1032|  5.734e+03|         9|        1|   1025|       yes|         -|         -|           -|           -|    -|
+    | o MEL_LOOP                                  |       -|   4.06|     5984|  3.952e+04|       187|        -|     32|        no|         -|         -|           -|           -|    -|
+    |  + cfu_hls_Pipeline_MEL_ACCUM               |  Timing|  -1.29|      167|    927.852|         -|      167|      -|        no|    2 (2%)|    2 (2%)|    494 (1%)|    233 (1%)|    -|
+    |   o MEL_ACCUM                               |       -|   4.06|      165|    916.740|         9|        1|    157|       yes|         -|         -|           -|           -|    -|
+    +---------------------------------------------+--------+-------+---------+-----------+----------+---------+-------+----------+----------+----------+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* Other Ports
++----------+---------+-----------+----------+
+| Port     | Mode    | Direction | Bitwidth |
++----------+---------+-----------+----------+
+| funct3_i | ap_none | in        | 8        |
+| funct7_i | ap_none | in        | 8        |
+| rslt_o   | ap_none | out       | 32       |
+| src1_i   | ap_none | in        | 32       |
+| src2_i   | ap_none | in        | 32       |
++----------+---------+-----------+----------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------------------------------+
+| Interface | Type       | Ports                             |
++-----------+------------+-----------------------------------+
+| ap_clk    | clock      | ap_clk                            |
+| ap_ctrl   | ap_ctrl_hs | ap_done ap_idle ap_ready ap_start |
++-----------+------------+-----------------------------------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+----------+
+| Argument | Direction | Datatype |
++----------+-----------+----------+
+| funct3_i | in        | char     |
+| funct7_i | in        | char     |
+| src1_i   | in        | int      |
+| src2_i   | in        | int      |
+| rslt_o   | out       | int*     |
++----------+-----------+----------+
+
+* SW-to-HW Mapping
++----------+--------------+---------+
+| Argument | HW Interface | HW Type |
++----------+--------------+---------+
+| funct3_i | funct3_i     | port    |
+| funct7_i | funct7_i     | port    |
+| src1_i   | src1_i       | port    |
+| src2_i   | src2_i       | port    |
+| rslt_o   | rslt_o       | port    |
++----------+--------------+---------+
+
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------------------+-----+--------+---------------+--------+-----------+---------+
+| Name                                        | DSP | Pragma | Variable      | Op     | Impl      | Latency |
++---------------------------------------------+-----+--------+---------------+--------+-----------+---------+
+| + cfu_hls                                   | 20  |        |               |        |           |         |
+|   icmp_ln129_fu_565_p2                      |     |        | icmp_ln129    | seteq  | auto      | 0       |
+|   add_ln129_fu_571_p2                       |     |        | add_ln129     | add    | fabric    | 0       |
+|   weight_idx_4_fu_588_p2                    |     |        | weight_idx_4  | add    | fabric    | 0       |
+|   icmp_ln140_fu_607_p2                      |     |        | icmp_ln140    | seteq  | auto      | 0       |
+|   mel_q16_1_fu_613_p3                       |     |        | mel_q16_1     | select | auto_sel  | 0       |
+|   shl_ln149_fu_879_p2                       |     |        | shl_ln149     | shl    | auto_pipe | 1       |
+|   sub_ln149_fu_897_p2                       |     |        | sub_ln149     | sub    | fabric    | 0       |
+|   lshr_32ns_5ns_32_2_1_U35                  |     |        | frac          | lshr   | auto_pipe | 1       |
+|   add_ln151_fu_913_p2                       |     |        | add_ln151     | add    | fabric    | 0       |
+|   log2_float_fu_930_p2                      |     |        | log2_float    | add    | fabric    | 0       |
+|   sub_ln152_fu_953_p2                       |     |        | sub_ln152     | sub    | fabric    | 0       |
+|   add_ln152_fu_970_p2                       |     |        | add_ln152     | add    | fabric    | 0       |
+|   add_ln152_1_fu_986_p2                     |     |        | add_ln152_1   | add    | fabric    | 0       |
+|   add_ln152_2_fu_1002_p2                    |     |        | add_ln152_2   | add    | fabric    | 0       |
+|   add_ln152_3_fu_1018_p2                    |     |        | add_ln152_3   | add    | fabric    | 0       |
+|   sub_ln152_1_fu_1026_p2                    |     |        | sub_ln152_1   | sub    | fabric    | 0       |
+|  + cfu_hls_Pipeline_HANN_LOOP               | 2   |        |               |        |           |         |
+|    icmp_ln55_fu_123_p2                      |     |        | icmp_ln55     | seteq  | auto      | 0       |
+|    add_ln55_fu_129_p2                       |     |        | add_ln55      | add    | fabric    | 0       |
+|    mul_17ns_32s_48_5_1_U1                   | 2   |        | mul_ln57      | mul    | auto      | 4       |
+|  + cfu_hls_Pipeline_BITREV_LOOP             | 0   |        |               |        |           |         |
+|    icmp_ln63_fu_104_p2                      |     |        | icmp_ln63     | seteq  | auto      | 0       |
+|    add_ln63_fu_110_p2                       |     |        | add_ln63      | add    | fabric    | 0       |
+|    icmp_ln79_fu_142_p2                      |     |        | icmp_ln79     | setlt  | auto      | 0       |
+|  + cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY | 8   |        |               |        |           |         |
+|    icmp_ln88_fu_198_p2                      |     |        | icmp_ln88     | seteq  | auto      | 0       |
+|    add_ln88_fu_204_p2                       |     |        | add_ln88      | add    | fabric    | 0       |
+|    icmp_ln92_fu_216_p2                      |     |        | icmp_ln92     | seteq  | auto      | 0       |
+|    select_ln88_fu_228_p3                    |     |        | select_ln88   | select | auto_sel  | 0       |
+|    stage_1_mid1_fu_234_p2                   |     |        | stage_1_mid1  | add    | fabric    | 0       |
+|    stage_13_fu_222_p2                       |     |        | stage_13      | add    | fabric    | 0       |
+|    select_ln88_1_fu_308_p3                  |     |        | select_ln88_1 | select | auto_sel  | 0       |
+|    select_ln88_2_fu_239_p3                  |     |        | select_ln88_2 | select | auto_sel  | 0       |
+|    half_size_fu_252_p2                      |     |        | half_size     | shl    | auto_pipe | 0       |
+|    table_step_fu_262_p2                     |     |        | table_step    | lshr   | auto_pipe | 0       |
+|    sub_fu_268_p2                            |     |        | sub           | add    | fabric    | 0       |
+|    group_fu_323_p2                          |     |        | group         | lshr   | auto_pipe | 0       |
+|    jj_fu_282_p2                             |     |        | jj            | and    | auto      | 0       |
+|    shl_ln98_fu_329_p2                       |     |        | shl_ln98      | shl    | auto_pipe | 0       |
+|    or_ln98_fu_351_p2                        |     |        | or_ln98       | or     | auto      | 0       |
+|    idx2_fu_362_p2                           |     |        | idx2          | add    | fabric    | 0       |
+|    mul_10s_10s_10_5_1_U13                   |     |        | mul_ln101     | mul    | auto      | 4       |
+|    mul_32s_18s_48_5_1_U11                   | 2   |        | mul_ln107     | mul    | auto      | 4       |
+|    mul_32s_17s_48_5_1_U9                    | 2   |        | mul_ln107_1   | mul    | auto      | 4       |
+|    tr_fu_423_p2                             |     |        | tr            | sub    | fabric    | 0       |
+|    mul_32s_18s_48_5_1_U12                   | 2   |        | mul_ln108     | mul    | auto      | 4       |
+|    mul_32s_17s_48_5_1_U10                   | 2   |        | mul_ln108_1   | mul    | auto      | 4       |
+|    ti_fu_449_p2                             |     |        | ti            | add    | fabric    | 0       |
+|    sub_ln109_fu_455_p2                      |     |        | sub_ln109     | sub    | fabric    | 0       |
+|    sub_ln110_fu_461_p2                      |     |        | sub_ln110     | sub    | fabric    | 0       |
+|    add_ln111_fu_467_p2                      |     |        | add_ln111     | add    | fabric    | 0       |
+|    add_ln112_fu_472_p2                      |     |        | add_ln112     | add    | fabric    | 0       |
+|    k_fu_288_p2                              |     |        | k             | add    | fabric    | 0       |
+|  + cfu_hls_Pipeline_POWER_LOOP              | 8   |        |               |        |           |         |
+|    icmp_ln118_fu_103_p2                     |     |        | icmp_ln118    | seteq  | auto      | 0       |
+|    add_ln118_fu_109_p2                      |     |        | add_ln118     | add    | fabric    | 0       |
+|    mul_32s_32s_58_5_1_U21                   | 4   |        | mul_ln122     | mul    | auto      | 4       |
+|    mul_32s_32s_58_5_1_U22                   | 4   |        | mul_ln122_1   | mul    | auto      | 4       |
+|    pwr_fu_136_p2                            |     |        | pwr           | add    | fabric    | 0       |
+|  + cfu_hls_Pipeline_MEL_ACCUM               | 2   |        |               |        |           |         |
+|    icmp_ln134_fu_134_p2                     |     |        | icmp_ln134    | seteq  | auto      | 0       |
+|    add_ln134_fu_140_p2                      |     |        | add_ln134     | add    | fabric    | 0       |
+|    add_ln136_fu_150_p2                      |     |        | add_ln136     | add    | fabric    | 0       |
+|    add_ln137_fu_156_p2                      |     |        | add_ln137     | add    | fabric    | 0       |
+|    mul_16ns_32s_48_5_1_U27                  | 2   |        | mul_ln137     | mul    | auto      | 4       |
+|    mel_pwr_3_fu_199_p2                      |     |        | mel_pwr_3     | add    | fabric    | 0       |
++---------------------------------------------+-----+--------+---------------+--------+-----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++---------------------------------------------+--------+------+------+------+--------+---------------------------+------+---------+------------------+
+| Name                                        | Usage  | Type | BRAM | URAM | Pragma | Variable                  | Impl | Latency | Bitwidth, Depth, |
+|                                             |        |      |      |      |        |                           |      |         | Banks            |
++---------------------------------------------+--------+------+------+------+--------+---------------------------+------+---------+------------------+
+| + cfu_hls                                   |        |      | 23   | 0    |        |                           |      |         |                  |
+|   frame_buf_U                               | ram_1p |      | 4    |      |        | frame_buf                 | auto | 1       | 32, 2048, 1      |
+|   real_buf_U                                | ram_2p |      | 4    |      | pragma | real_buf                  | bram | 1       | 32, 2048, 1      |
+|   imag_buf_U                                | ram_2p |      | 4    |      | pragma | imag_buf                  | bram | 1       | 32, 2048, 1      |
+|   power_buf_U                               | ram_1p |      | 4    |      |        | power_buf                 | auto | 1       | 32, 1025, 1      |
+|   mel_k_start_fixed_U                       | rom_1p |      |      |      |        | mel_k_start_fixed         | auto | 1       | 10, 32, 1        |
+|   mel_k_len_fixed_U                         | rom_1p |      |      |      |        | mel_k_len_fixed           | auto | 1       | 8, 32, 1         |
+|   mel_out_U                                 | ram_1p |      | 1    |      |        | mel_out                   | auto | 1       | 32, 32, 1        |
+|  + cfu_hls_Pipeline_HANN_LOOP               |        |      | 2    | 0    |        |                           |      |         |                  |
+|    hann_window_fixed_U                      | rom_1p |      | 2    |      |        | hann_window_fixed         | auto | 1       | 17, 2048, 1      |
+|  + cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY |        |      | 2    | 0    |        |                           |      |         |                  |
+|    cos_table_fixed_U                        | rom_1p |      | 1    |      |        | cos_table_fixed           | auto | 1       | 18, 1024, 1      |
+|    sin_table_fixed_U                        | rom_1p |      | 1    |      |        | sin_table_fixed           | auto | 1       | 17, 1024, 1      |
+|  + cfu_hls_Pipeline_MEL_ACCUM               |        |      | 2    | 0    |        |                           |      |         |                  |
+|    mel_weights_compact_fixed_U              | rom_1p |      | 2    |      |        | mel_weights_compact_fixed | auto | 1       | 16, 1958, 1      |
++---------------------------------------------+--------+------+------+------+--------+---------------------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++--------------+-----------------------------------------+------------------------------------------+
+| Type         | Options                                 | Location                                 |
++--------------+-----------------------------------------+------------------------------------------+
+| bind_storage | variable=real_buf type=ram_2p impl=bram | cfu_hls.c:38 in cfu_hls, real_buf        |
+| bind_storage | variable=imag_buf type=ram_2p impl=bram | cfu_hls.c:39 in cfu_hls, imag_buf        |
+| pipeline     | II=1                                    | cfu_hls.c:56 in cfu_hls                  |
+| pipeline     | II=1                                    | cfu_hls.c:64 in cfu_hls                  |
+| pipeline     | II=1                                    | cfu_hls.c:93 in cfu_hls                  |
+| dependence   | variable=real_buf inter false           | cfu_hls.c:94 in cfu_hls, real_buf        |
+| dependence   | variable=imag_buf inter false           | cfu_hls.c:95 in cfu_hls, imag_buf        |
+| pipeline     | II=1                                    | cfu_hls.c:119 in cfu_hls                 |
+| pipeline     | II=1                                    | cfu_hls.c:135 in cfu_hls                 |
+| unroll       |                                         | cfu_hls.c:146 in cfu_hls                 |
+| interface    | ap_none port=rslt_o                     | constr/cfu_hls.cfg:12 in cfu_hls, rslt_o |
++--------------+-----------------------------------------+------------------------------------------+
+
+

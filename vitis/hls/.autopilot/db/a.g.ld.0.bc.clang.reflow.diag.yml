@@ -1,0 +1,27 @@
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: cfu_hls.c, Line: 29, Column: 0 }
+Function:        cfu_hls
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        LOG2_MSB
+  - String:          ''' ('
+  - LoopLoc:         'cfu_hls.c:145:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          cfu_hls
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_cfu_hls_ir
+Args:            
+  - Callee:          cfu_hls
+    DebugLoc:        { File: cfu_hls.c, Line: 29, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_cfu_hls_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...

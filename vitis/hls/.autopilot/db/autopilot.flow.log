@@ -1,0 +1,914 @@
+Execute     source -notrace -encoding utf-8 /tools/Xilinx/Vitis/2024.2/tps/tcl/tcl8.6/clock.tcl 
+Execute       source -encoding utf-8 /tools/Xilinx/Vitis/2024.2/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/kumagai/Work/bnn/kws_hls/vitis/hls opened at Sun Mar 15 11:48:22 JST 2026
+Execute     send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute   apply_ini /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg 
+Execute     send_msg_by_id INFO @200-1465@%s 'syn.file=cfu_hls.c' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(8) 
+INFO: [HLS 200-1465] Applying ini 'syn.file=cfu_hls.c' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(8)
+Execute     add_files cfu_hls.c 
+INFO: [HLS 200-10] Adding design file 'cfu_hls.c' to the project
+Execute     send_msg_by_id INFO @200-1465@%s 'syn.top=cfu_hls' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(7) 
+INFO: [HLS 200-1465] Applying ini 'syn.top=cfu_hls' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(7)
+Execute     set_top cfu_hls 
+Execute     send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(4) 
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(4)
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute     send_msg_by_id INFO @200-1465@%s 'part=xc7a35tcsg324-1' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(1) 
+INFO: [HLS 200-1465] Applying ini 'part=xc7a35tcsg324-1' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(1)
+Execute     set_part xc7a35tcsg324-1 
+Execute       create_platform xc7a35tcsg324-1 -board  
+DBG:HLSDevice: Trying to load device library: /tools/Xilinx/Vitis/2024.2/lib/lnx64.o/libxv_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /tools/Xilinx/Vivado/2024.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7a35t-csg324-1'
+Command       create_platform done; 1 sec.
+Execute       source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/util.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       ap_part_info -name xc7a35t-csg324-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.08 sec.
+Execute     send_msg_by_id INFO @200-1465@%s 'clock=180MHz' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(9) 
+INFO: [HLS 200-1465] Applying ini 'clock=180MHz' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(9)
+Execute     create_clock -period 180MHz 
+Execute       ap_set_clock -name default -period 5.556 -unit ns -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5.556ns.
+Execute     send_msg_by_id INFO @200-1465@%s 'package.output.format=rtl' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(5) 
+INFO: [HLS 200-1465] Applying ini 'package.output.format=rtl' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(5)
+Execute     config_export -format=rtl 
+Execute     send_msg_by_id INFO @200-1465@%s 'syn.interface.clock_enable=0' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(13) 
+INFO: [HLS 200-1465] Applying ini 'syn.interface.clock_enable=0' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(13)
+Execute     config_interface -clock_enable=0 
+Execute     send_msg_by_id INFO @200-1465@%s 'syn.rtl.fsm_encoding=auto' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(11) 
+INFO: [HLS 200-1465] Applying ini 'syn.rtl.fsm_encoding=auto' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(11)
+Execute     config_rtl -fsm_encoding=auto 
+Execute     send_msg_by_id INFO @200-1465@%s 'syn.rtl.register_all_io=1' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(14) 
+INFO: [HLS 200-1465] Applying ini 'syn.rtl.register_all_io=1' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(14)
+Execute     config_rtl -register_all_io=1 
+Execute     send_msg_by_id INFO @200-1465@%s 'syn.rtl.reset=none' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(10) 
+INFO: [HLS 200-1465] Applying ini 'syn.rtl.reset=none' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(10)
+Execute     config_rtl -reset=none 
+Execute     send_msg_by_id INFO @200-1465@%s 'syn.directive.interface=cfu_hls rslt_o mode=ap_none' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(12) 
+INFO: [HLS 200-1465] Applying ini 'syn.directive.interface=cfu_hls rslt_o mode=ap_none' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(12)
+Execute     set_directive_interface cfu_hls rslt_o -mode=ap_none 
+Command   apply_ini done; 1.17 sec.
+Execute   apply_ini /home/kumagai/Work/bnn/kws_hls/vitis/hls/config.cmdline 
+Execute   ::AP::init_summary_file csynth 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csynth_design 
+INFO-FLOW: Running SLX 'csynth' proc: ::SLX::run_csynth
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1.84 seconds. CPU system time: 0.17 seconds. Elapsed time: 2.06 seconds; current allocated memory: 660.078 MB.
+Execute       set_directive_top cfu_hls -name=cfu_hls 
+Execute       source /tools/Xilinx/Vitis/2024.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source /tools/Xilinx/Vitis/2024.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+INFO: [HLS 200-10] Analyzing design file 'cfu_hls.c' ... 
+INFO-FLOW: Compiling one TU...
+INFO-FLOW: Handling cfu_hls.c as C
+Execute       ap_part_info -name xc7a35t-csg324-1 -data info 
+INFO-FLOW: Running: GCC PP 39
+INFO-FLOW: Source preprocessing
+INFO-FLOW: run_clang exec: /tools/Xilinx/Vitis/2024.2/lnx64/tools/clang-3.9-csynth/bin/clang cfu_hls.c -foptimization-record-file=/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info --gcc-toolchain=/tools/Xilinx/Vitis/2024.2/tps/lnx64/gcc-8.3.0 -fhls -fno-exceptions -insert-hls-directive=/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/all.directive.json -E -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=5.556 -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vitis/2024.2/common/technology/autopilot -I /tools/Xilinx/Vitis/2024.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -I /usr/include/x86_64-linux-gnu -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c -hls-platform-db-name=/tools/Xilinx/Vitis/2024.2/common/technology/xilinx/common/platform.db -hls-platform-name=artix7_slow -device-resource-info=BRAM_100.000000_DSP_90.000000_FF_41600.000000_LUT_20800.000000_SLICE_8150.000000_URAM_0.000000 -device-name-info=xc7a35tcsg324-1 > /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.c.clang.out.log 2> /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.c.clang.err.log
+INFO-FLOW: Done: GCC PP 39 time: 0.1 seconds per iteration
+INFO-FLOW: Source syntax check for synthesis
+INFO-FLOW: run_clang exec: /tools/Xilinx/Vitis/2024.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fsyntax-only -fhls -target fpga64-xilinx-linux-gnu /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c -hls-platform-db-name=/tools/Xilinx/Vitis/2024.2/common/technology/xilinx/common/platform.db -hls-platform-name=artix7_slow -device-resource-info=BRAM_100.000000_DSP_90.000000_FF_41600.000000_LUT_20800.000000_SLICE_8150.000000_URAM_0.000000 -device-name-info=xc7a35tcsg324-1 > /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/clang.out.log 2> /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/clang.err.log
+Execute       clang_tidy xilinx-systemc-detector -desc systemc-detector /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c std=gnu99 -target fpga  -directive=/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec /tools/Xilinx/Vitis/2024.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-systemc-detector -import-directive=/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/.systemc_flag -fix-errors /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Running: clang-tidy CDT preprocess 39
+Execute       clang_tidy xilinx-directive2pragma -desc directive2pragma /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c std=gnu99 -target fpga  -directive=/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/all.directive.json 
+INFO-FLOW: exec /tools/Xilinx/Vitis/2024.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -header-filter=.* --checks=-*,xilinx-directive2pragma -import-directive=/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/all.directive.json -fix-errors /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0
+INFO-FLOW: Done: clang-tidy CDT preprocess 39 time: 0 seconds per iteration
+INFO-FLOW: Calling xilinx-label-all-loops ... 
+INFO-FLOW: Calling xilinx-aggregate-on-hls-vector ... 
+Execute       clang_tidy -errorcheck -desc loop-label xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c std=gnu99 -target fpga  
+INFO-FLOW: run_clang exec: /tools/Xilinx/Vitis/2024.2/lnx64/tools/clang-3.9-csynth/bin/clang-tidy -export-fixes=/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c.clang-tidy.loop-label.diag.yml -header-filter=.* --checks=-*,xilinx-label-all-loops,xilinx-aggregate-on-hls-vector,,xilinx-warn-mayneed-no-ctor-attribute -fix-errors /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 > /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c.clang-tidy.loop-label.out.log 2> /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c.clang-tidy.loop-label.err.log
+Execute         source /tools/Xilinx/Vitis/2024.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+INFO-FLOW: run_clang exec: /tools/Xilinx/Vitis/2024.2/lnx64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c.xilinx-dataflow-lawyer.diag.yml /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c -- -std=gnu99 -target fpga -fhls -ferror-limit=0 -fstrict-dataflow > /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c.xilinx-dataflow-lawyer.out.log 2> /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c.xilinx-dataflow-lawyer.err.log
+Execute       ap_part_info -name xc7a35t-csg324-1 -data info 
+INFO-FLOW: compiling source code to llvm bc
+INFO-FLOW: run_clang exec: /tools/Xilinx/Vitis/2024.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c.clang.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fno-limit-debug-info -fhls -flto -fno-exceptions -Wno-error=c++11-narrowing -hls-emit-hint-scope /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c -fno-math-errno -c -emit-llvm -mllvm -disable-llvm-optzns -Werror=implicit-function-declaration -Werror=implicit-hls-streams -Werror=return-type -Wpragmas -Wunused-parameter -Wdump-hls-pragmas -Wno-error=dump-hls-pragmas -hls-clock-period=5.556 -std=gnu99 -fgnu89-inline -target fpga64-xilinx-linux-gnu -D__VITIS_HLS__ -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I /tools/Xilinx/Vitis/2024.2/common/technology/autopilot -I /tools/Xilinx/Vitis/2024.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.bc -hls-platform-db-name=/tools/Xilinx/Vitis/2024.2/common/technology/xilinx/common/platform.db -hls-platform-name=artix7_slow -device-resource-info=BRAM_100.000000_DSP_90.000000_FF_41600.000000_LUT_20800.000000_SLICE_8150.000000_URAM_0.000000 -device-name-info=xc7a35tcsg324-1 > /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c.clang.out.log 2> /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c.clang.err.log
+WARNING: [HLS 207-5292] unused parameter 'funct3_i' (cfu_hls.c:24:10)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.13 seconds. CPU system time: 0.16 seconds. Elapsed time: 0.43 seconds; current allocated memory: 662.066 MB.
+INFO-FLOW: Linking Debug ...
+INFO-FLOW: Linking dut bc code.
+Execute       run_link_or_opt -out /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.0.bc -args  "/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.g.bc"  
+INFO-FLOW: run_clang exec: /tools/Xilinx/Vitis/2024.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.g.bc -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.0.bc > /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.0.bc.llvm-link.out.log 2> /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.0.bc.llvm-link.err.log
+Execute       run_link_or_opt -opt -out /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.1.lower.bc -args /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics 
+INFO-FLOW: run_clang exec: /tools/Xilinx/Vitis/2024.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll|inline -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.1.lower.bc.opt.diag.yml /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.0.bc -reflow-lower-math-intrinsics -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.1.lower.bc > /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.1.lower.bc.opt.out.log 2> /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.1.lower.bc.opt.err.log
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+INFO-FLOW: Linking math bc lib
+Execute       run_link_or_opt -out /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.2.m1.bc -args /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.1.lower.bc -only-needed /tools/Xilinx/Vitis/2024.2/lnx64/lib/libhlsm_39.bc /tools/Xilinx/Vitis/2024.2/lnx64/lib/libhlsmc++_39.bc 
+INFO-FLOW: run_clang exec: /tools/Xilinx/Vitis/2024.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.1.lower.bc -only-needed /tools/Xilinx/Vitis/2024.2/lnx64/lib/libhlsm_39.bc /tools/Xilinx/Vitis/2024.2/lnx64/lib/libhlsmc++_39.bc -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.2.m1.bc > /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.out.log 2> /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.2.m1.bc.llvm-link.err.log
+Command       run_link_or_opt done; 0.67 sec.
+Execute       run_link_or_opt -opt -out /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.3.fpc.bc -args /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=cfu_hls -reflow-float-conversion 
+INFO-FLOW: run_clang exec: /tools/Xilinx/Vitis/2024.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll|inline -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.3.fpc.bc.opt.diag.yml /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.2.m1.bc -reflow-globaldce -hls-top-function-name=cfu_hls -reflow-float-conversion -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.3.fpc.bc > /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.3.fpc.bc.opt.out.log 2> /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.3.fpc.bc.opt.err.log
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+Command       run_link_or_opt done; 0.29 sec.
+Execute       run_link_or_opt -out /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.4.m2.bc -args /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /tools/Xilinx/Vitis/2024.2/lnx64/lib/libfloatconversion_39.bc 
+INFO-FLOW: run_clang exec: /tools/Xilinx/Vitis/2024.2/lnx64/tools/clang-3.9-csynth/bin/llvm-link /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.3.fpc.bc -only-needed /tools/Xilinx/Vitis/2024.2/lnx64/lib/libfloatconversion_39.bc -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.4.m2.bc > /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.out.log 2> /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.4.m2.bc.llvm-link.err.log
+Execute       run_link_or_opt -opt -out /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.5.gdce.bc -args /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=cfu_hls 
+INFO-FLOW: run_clang exec: /tools/Xilinx/Vitis/2024.2/lnx64/tools/clang-3.9-csynth/bin/opt -pass-remarks-missed=reflow|pasta|unroll|inline -pass-remarks=reflow|pasta|unroll|inline -pass-remarks-output=/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.5.gdce.bc.opt.diag.yml /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.4.m2.bc -reflow-globaldce -hls-top-function-name=cfu_hls -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.5.gdce.bc > /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.5.gdce.bc.opt.out.log 2> /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.5.gdce.bc.opt.err.log
+INFO-FLOW: Running: gen_design_size_report post-opt
+INFO-FLOW: Done: gen_design_size_report post-opt time: 0 seconds per iteration
+Execute       send_msg_by_id INFO @200-777@%s Vivado 
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+Execute       is_m_axi_addr64 
+INFO-FLOW: Doing LTO.
+INFO-FLOW: run_clang (background poll_ms 5000) exec: /tools/Xilinx/Vitis/2024.2/lnx64/tools/clang-3.9-csynth/bin/clang -foptimization-record-file=/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.0.bc.clang.reflow.diag.yml -mllvm -pass-remarks-missed=reflow|pasta|unroll|inline -mllvm -pass-remarks=reflow|pasta|unroll|inline -fhls -mllvm -hls-top-function-name=cfu_hls -mllvm -hls-db-dir -mllvm /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db -emit-llvm -c -target fpga64-xilinx-none -mllvm -xcl-xmlinfo=/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/kernel.internal.xml -mllvm -top-io-mapping-info=/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/top-io-fe.xml -mllvm -hls-bitcode-version=3.1 -mllvm -reflow-enable-slave-interface-default-setting=true -mllvm -gen-kernel-xml=false -mllvm -default-maxi-offset=slave -mllvm -maxi-latency=0 -mllvm -hls-maxi-data-size-in-bits=8 -mllvm -hls-maxi-max-data-size-in-bits=1024 -mllvm -hls-max-widen-size-in-bits=0 -mllvm -xcl-kernel-max-mem-ports=0 -mllvm -maxi-read-trans=16 -mllvm -maxi-write-trans=16 -mllvm -maxi-read-burst-len=16 -mllvm -maxi-write-burst-len=16 -mllvm -reflow-enable-saxi-64bits=0 -mllvm -reflow-basic-block-instr-threshold=200000 -mllvm -reflow-auto-pipeline-threshold=64 -mllvm -reflow-enable-maxi-auto-id-channel=0 -mllvm -reflow-bdd-simplify-threshold=1048576 -mllvm -reflow-fanout-threshold=16 -mllvm -reflow-complete-threshold=4 -mllvm -reflow-array-promotion-threshold=64 -mllvm -assume-maxi-align=1 -mllvm -reflow-enable-dataflow-strict-mode-checking=1 -ftime-report -mllvm -time-passes -mllvm -reflow-auto-array-partition-mode=default -mllvm -reflow-enable-auto-small-array-partition=true -mllvm -reflow-enable-auto-array-promotion=true -mllvm -reflow-enable-auto-array-partition-for-flatten=true -mllvm -reflow-enable-auto-parallel-performance-driven=true -mllvm -reflow-enable-partition-for-automation=true -mllvm -reflow-aggregate-bitwidth-threshold=4096 -mllvm -reflow-reserved-saxilite-registers=0 -mllvm -enable-reflow-auto-loop-pipeline -mllvm -reflow-max-unroll-threshold=409600 -mllvm -auto-unroll-tripcount-threshold=0 -mllvm -reflow-assume-no-address-wrap=true -mllvm -reflow-enable-occurrence-inference=true -mllvm -reflow-emit-hint-scope=true -mllvm -reflow-enable-codegen-with-if=true -mllvm -reflow-enable-dataflow-canon=true -mllvm -reflow-enable-dataflow-canon2=true -mllvm -hls -mllvm -disable-inlined-alloca-merging=true -mllvm -default-clock-period=5.556 -mllvm -use_read_first_ram_in_loop=1 -mllvm -default-clock-uncertainty=1.5 -x ir /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.5.gdce.bc -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.lto.bc -hls-platform-db-name=/tools/Xilinx/Vitis/2024.2/common/technology/xilinx/common/platform.db -hls-platform-name=artix7_slow -device-resource-info=BRAM_100.000000_DSP_90.000000_FF_41600.000000_LUT_20800.000000_SLICE_8150.000000_URAM_0.000000 -device-name-info=xc7a35tcsg324-1 2> /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.ld.0.bc.clang.reflow.err.log bg_poll_cmd: ::AP::poll_clang_39_closed_source
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 310 Compile/Link /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 310 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 385 Unroll/Inline (step 1) /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 385 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 331 Unroll/Inline (step 2) /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 331 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 335 Unroll/Inline (step 3) /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 335 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 333 Unroll/Inline (step 4) /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 333 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 333 Array/Struct (step 1) /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 333 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 333 Array/Struct (step 2) /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 333 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 333 Array/Struct (step 3) /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 333 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 333 Array/Struct (step 4) /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 333 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 334 Array/Struct (step 5) /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 334 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 334 Performance (step 1) /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 334 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 333 Performance (step 2) /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 333 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 333 Performance (step 3) /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 333 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 333 Performance (step 4) /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 333 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 342 HW Transforms (step 1) /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 342 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+Execute       send_msg_by_id INFO @200-1995@%s%s%s 365 HW Transforms (step 2) /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt 
+INFO: [HLS 200-1995] There were 365 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-186] Unrolling loop 'LOG2_MSB' (cfu_hls.c:145:13) in function 'cfu_hls' completely with a factor of 32 (cfu_hls.c:29:0)
+INFO-FLOW: DBG:PUTS: copy_raw_kernel_xml ap_link_39: kernel.xml not generated: /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/kernel.internal.xml
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0.97 seconds. CPU system time: 0.18 seconds. Elapsed time: 6.25 seconds; current allocated memory: 663.648 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 663.648 MB.
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top cfu_hls -deadargelim -mem2reg -instcombine -dce -presyn-prepare -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -promote-dbg-pointer -norm-name /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.0.bc -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 664.723 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -scalarrepl -norm-name -dce -mem2reg -instcombine -directive-preproc -mem2reg -dse -dce -dce -pag -array-normalize -instcombine -dce -array-seg-normalize -instcombine -dce -data-pack -instcombine -dce -inst-simplify -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -directive-preproc -mem2reg -dse -dce -globaldce /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.1.bc -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.2.prechk.bc -f 
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.2.prechk.bc -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.2.bc -f -phase syn-check 
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 664.863 MB.
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.g.1.bc to /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db -interface-port-rename -directive-preproc -mem2reg -dse -dce -scalarrepl -norm-name -deadargelim -dce -hls-dead-arg-elim -deadargelim -mem2reg -instcombine -dce -simplifycfg -dce -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -directive-preproc -mem2reg -dse -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -loop-simplify -loop-bound -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -prepare-dynamic-array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -lcssa -loop-simplify -phi-select-elim -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -accesses-merge -function-inline -complex-op-raise -inst-simplify -globaldce -func-legal -dce -loop-bound -arraycheck -bitwidthmin2 -bitwidthmin2 -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -duplicate-dataflow-processes -check-dataflow-syntax -legalize-stream-variable -globaldce -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -hls-dead-arg-elim -deadargelim -directive-preproc -canonicalize-dataflow -dce -globaldce -scalar-preprocessing -scalar-propagation2 -scalar-stream -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -clean-array-spec -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -hls-display -norm-name /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.o.1.bc -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.o.1.tmp.bc -f 
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin2 -bitwidthmin2 -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -barrier -norm-name /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.o.1.tmp.bc -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cfu_hls.c:134:13) to (cfu_hls.c:129:9) in function 'cfu_hls'... converting 32 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 688.684 MB.
+Execute         transform -hls -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -aggr-aa -licm -loop-dep -loop-bound -licm -loop-simplify -loop-sink-hoist -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg-lite -loop-simplify -array-burst -promote-global-argument -dce -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -inst-simplify -cfgopt -simplifycfg-lite -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -deadargelim -dce -canonicalize-dataflow -dce -deadargelim -globaldce -mem2reg -bram-byte-enable -inst-simplify -inst-rectify -instcombine -adce -deadargelim -load-elim -read-loop-dep -loop-simplify -loop-rewind-sink-hoist -loop-outline -hls-dead-arg-elim -directive-preproc -bitwidthmin2 -bitwidthmin2 -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable-spec-prop -mul2addshift -deadargelim -inst-simplify -dce -mem2reg -instcombine -gvn -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg-lite -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -float-op-raise -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg-lite -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg-lite -loop-simplify -mergereturn -inst-simplify -inst-rectify -globaldce -dce -load-elim -bitop-lower -float-op-raise -fma-raise -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -dyn-mem-reuse -dce -recurrence-min -dce -share-scalar-alloca -deadargelim -dce -check-stream -norm-name -legalize -inst-clarity -bitwidth -dce -validate-dataflow -dump-loop-dep-to-ir -check-all-ssdm -dump-complexity-metric /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.o.2.bc -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [HLS 200-2061] Successfully converted nested loops 'FFT_STAGE'(cfu_hls.c:88:9) and 'FFT_BUTTERFLY'(cfu_hls.c:92:13) in function 'cfu_hls' into perfectly nested loops.
+INFO: [XFORM 203-541] Flattening a loop nest 'FFT_STAGE' (cfu_hls.c:88:9) in function 'cfu_hls'.
+WARNING: [HLS 200-1946] Dependence pragma (cfu_hls.c:94:9) in loop 'FFT_BUTTERFLY' may become invalid because the loop was flattened with the outer loop 'FFT_STAGE'.
+WARNING: [HLS 200-1946] Dependence pragma (cfu_hls.c:95:9) in loop 'FFT_BUTTERFLY' may become invalid because the loop was flattened with the outer loop 'FFT_STAGE'.
+WARNING: [HLS 200-960] Cannot flatten loop 'MEL_LOOP' (cfu_hls.c:129:9) in function 'cfu_hls' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'real_buf'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'imag_buf'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'real_buf'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'imag_buf'.
+Execute           auto_get_db
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -cdfg-build /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.o.3.bc -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 727.688 MB.
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 0.27 sec.
+Command     elaborate done; 6.96 sec.
+Execute     ap_eval exec zip -j /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/dut.hcp $dbDir/a.o.3.bc $dbDir/${topname}.rtl_wrap.cfg.tcl $dbDir/apatb_${topname}.cpp $dbDir/apatb_${topname}_util.cpp $dbDir/apatb_${topname}_ir.ll $dbDir/mapper_${topname}.cpp $dbDir/top-io-fe.xml $dbDir/kernel.internal.xml $workdir/../hls.app 
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'cfu_hls' ...
+Execute       ap_set_top_model cfu_hls 
+Execute       get_model_list cfu_hls -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model cfu_hls 
+Execute       preproc_iomode -model cfu_hls_Pipeline_MEL_ACCUM 
+Execute       preproc_iomode -model cfu_hls_Pipeline_POWER_LOOP 
+Execute       preproc_iomode -model cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY 
+Execute       preproc_iomode -model cfu_hls_Pipeline_BITREV_LOOP 
+Execute       preproc_iomode -model cfu_hls_Pipeline_HANN_LOOP 
+Execute       get_model_list cfu_hls -filter all-wo-channel 
+INFO-FLOW: Model list for configure: cfu_hls_Pipeline_HANN_LOOP cfu_hls_Pipeline_BITREV_LOOP cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY cfu_hls_Pipeline_POWER_LOOP cfu_hls_Pipeline_MEL_ACCUM cfu_hls
+INFO-FLOW: Configuring Module : cfu_hls_Pipeline_HANN_LOOP ...
+Execute       set_default_model cfu_hls_Pipeline_HANN_LOOP 
+Execute       apply_spec_resource_limit cfu_hls_Pipeline_HANN_LOOP 
+INFO-FLOW: Configuring Module : cfu_hls_Pipeline_BITREV_LOOP ...
+Execute       set_default_model cfu_hls_Pipeline_BITREV_LOOP 
+Execute       apply_spec_resource_limit cfu_hls_Pipeline_BITREV_LOOP 
+INFO-FLOW: Configuring Module : cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY ...
+Execute       set_default_model cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY 
+Execute       apply_spec_resource_limit cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY 
+INFO-FLOW: Configuring Module : cfu_hls_Pipeline_POWER_LOOP ...
+Execute       set_default_model cfu_hls_Pipeline_POWER_LOOP 
+Execute       apply_spec_resource_limit cfu_hls_Pipeline_POWER_LOOP 
+INFO-FLOW: Configuring Module : cfu_hls_Pipeline_MEL_ACCUM ...
+Execute       set_default_model cfu_hls_Pipeline_MEL_ACCUM 
+Execute       apply_spec_resource_limit cfu_hls_Pipeline_MEL_ACCUM 
+INFO-FLOW: Configuring Module : cfu_hls ...
+Execute       set_default_model cfu_hls 
+Execute       apply_spec_resource_limit cfu_hls 
+INFO-FLOW: Model list for preprocess: cfu_hls_Pipeline_HANN_LOOP cfu_hls_Pipeline_BITREV_LOOP cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY cfu_hls_Pipeline_POWER_LOOP cfu_hls_Pipeline_MEL_ACCUM cfu_hls
+INFO-FLOW: Preprocessing Module: cfu_hls_Pipeline_HANN_LOOP ...
+Execute       set_default_model cfu_hls_Pipeline_HANN_LOOP 
+Execute       cdfg_preprocess -model cfu_hls_Pipeline_HANN_LOOP 
+Execute       rtl_gen_preprocess cfu_hls_Pipeline_HANN_LOOP 
+INFO-FLOW: Preprocessing Module: cfu_hls_Pipeline_BITREV_LOOP ...
+Execute       set_default_model cfu_hls_Pipeline_BITREV_LOOP 
+Execute       cdfg_preprocess -model cfu_hls_Pipeline_BITREV_LOOP 
+Execute       rtl_gen_preprocess cfu_hls_Pipeline_BITREV_LOOP 
+INFO-FLOW: Preprocessing Module: cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY ...
+Execute       set_default_model cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY 
+Execute       cdfg_preprocess -model cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY 
+Execute       rtl_gen_preprocess cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY 
+INFO-FLOW: Preprocessing Module: cfu_hls_Pipeline_POWER_LOOP ...
+Execute       set_default_model cfu_hls_Pipeline_POWER_LOOP 
+Execute       cdfg_preprocess -model cfu_hls_Pipeline_POWER_LOOP 
+Execute       rtl_gen_preprocess cfu_hls_Pipeline_POWER_LOOP 
+INFO-FLOW: Preprocessing Module: cfu_hls_Pipeline_MEL_ACCUM ...
+Execute       set_default_model cfu_hls_Pipeline_MEL_ACCUM 
+Execute       cdfg_preprocess -model cfu_hls_Pipeline_MEL_ACCUM 
+Execute       rtl_gen_preprocess cfu_hls_Pipeline_MEL_ACCUM 
+INFO-FLOW: Preprocessing Module: cfu_hls ...
+Execute       set_default_model cfu_hls 
+Execute       cdfg_preprocess -model cfu_hls 
+Execute       rtl_gen_preprocess cfu_hls 
+INFO-FLOW: Model list for synthesis: cfu_hls_Pipeline_HANN_LOOP cfu_hls_Pipeline_BITREV_LOOP cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY cfu_hls_Pipeline_POWER_LOOP cfu_hls_Pipeline_MEL_ACCUM cfu_hls
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cfu_hls_Pipeline_HANN_LOOP' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model cfu_hls_Pipeline_HANN_LOOP 
+Execute       schedule -model cfu_hls_Pipeline_HANN_LOOP 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'HANN_LOOP'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 8, loop 'HANN_LOOP'
+WARNING: [HLS 200-871] Estimated clock period (5.351 ns) exceeds the target (target clock period: 5.556 ns, clock uncertainty: 1.500 ns, effective delay budget: 4.056 ns).
+WARNING: [HLS 200-1016] The critical path in module 'cfu_hls_Pipeline_HANN_LOOP' consists of the following:
+	'store' operation 0 bit ('i_write_ln51', cfu_hls.c:51) of constant 0 on local variable 'i', cfu_hls.c:51 [8]  (1.610 ns)
+	'load' operation 12 bit ('i', cfu_hls.c:55) on local variable 'i', cfu_hls.c:51 [11]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln55', cfu_hls.c:55) [12]  (2.131 ns)
+	'store' operation 0 bit ('i_write_ln51', cfu_hls.c:51) of variable 'add_ln55', cfu_hls.c:55 on local variable 'i', cfu_hls.c:51 [32]  (1.610 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.02 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.15 seconds; current allocated memory: 727.688 MB.
+Execute       syn_report -verbosereport -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_HANN_LOOP.verbose.sched.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_HANN_LOOP.sched.adb -f 
+INFO-FLOW: Finish scheduling cfu_hls_Pipeline_HANN_LOOP.
+Execute       set_default_model cfu_hls_Pipeline_HANN_LOOP 
+Execute       bind -model cfu_hls_Pipeline_HANN_LOOP 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 727.688 MB.
+Execute       syn_report -verbosereport -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_HANN_LOOP.verbose.bind.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_HANN_LOOP.bind.adb -f 
+INFO-FLOW: Finish binding cfu_hls_Pipeline_HANN_LOOP.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cfu_hls_Pipeline_BITREV_LOOP' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model cfu_hls_Pipeline_BITREV_LOOP 
+Execute       schedule -model cfu_hls_Pipeline_BITREV_LOOP 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'BITREV_LOOP'.
+WARNING: [HLS 200-880] The II Violation in module 'cfu_hls_Pipeline_BITREV_LOOP' (loop 'BITREV_LOOP'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation 0 bit ('imag_buf_addr_write_ln81', cfu_hls.c:81) of variable 'ti', cfu_hls.c:81 on array 'imag_buf' and 'load' operation 32 bit ('imag_buf_load', cfu_hls.c:81) on array 'imag_buf'.
+WARNING: [HLS 200-880] The II Violation in module 'cfu_hls_Pipeline_BITREV_LOOP' (loop 'BITREV_LOOP'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation 0 bit ('imag_buf_addr_write_ln81', cfu_hls.c:81) of variable 'ti', cfu_hls.c:81 on array 'imag_buf' and 'load' operation 32 bit ('imag_buf_load', cfu_hls.c:81) on array 'imag_buf'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 3, Depth = 3, loop 'BITREV_LOOP'
+WARNING: [HLS 200-871] Estimated clock period (6.514 ns) exceeds the target (target clock period: 5.556 ns, clock uncertainty: 1.500 ns, effective delay budget: 4.056 ns).
+WARNING: [HLS 200-1016] The critical path in module 'cfu_hls_Pipeline_BITREV_LOOP' consists of the following:
+	'load' operation 32 bit ('real_buf_load', cfu_hls.c:80) on array 'real_buf' [27]  (3.257 ns)
+	'store' operation 0 bit ('real_buf_addr_1_write_ln80', cfu_hls.c:80) of variable 'real_buf_load', cfu_hls.c:80 on array 'real_buf' [28]  (3.257 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 727.688 MB.
+Execute       syn_report -verbosereport -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_BITREV_LOOP.verbose.sched.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_BITREV_LOOP.sched.adb -f 
+INFO-FLOW: Finish scheduling cfu_hls_Pipeline_BITREV_LOOP.
+Execute       set_default_model cfu_hls_Pipeline_BITREV_LOOP 
+Execute       bind -model cfu_hls_Pipeline_BITREV_LOOP 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 727.688 MB.
+Execute       syn_report -verbosereport -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_BITREV_LOOP.verbose.bind.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_BITREV_LOOP.bind.adb -f 
+INFO-FLOW: Finish binding cfu_hls_Pipeline_BITREV_LOOP.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY 
+Execute       schedule -model cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY 
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [HLS 200-1015] Estimated delay Estimated delay (6.604ns)  of 'mul' operation 10 bit ('mul_ln101', cfu_hls.c:101) exceeds the target cycle time (target cycle time: 5.556ns, clock uncertainty: 1.500ns, effective cycle time: 4.056ns).
+
+INFO: [SCHED 204-61] Pipelining loop 'FFT_STAGE_FFT_BUTTERFLY'.
+WARNING: [HLS 200-885] The II Violation in module 'cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY' (loop 'FFT_STAGE_FFT_BUTTERFLY'): Unable to schedule 'load' operation 32 bit ('r1', cfu_hls.c:105) on array 'real_buf' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'real_buf'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 16, loop 'FFT_STAGE_FFT_BUTTERFLY'
+WARNING: [HLS 200-871] Estimated clock period (6.604 ns) exceeds the target (target clock period: 5.556 ns, clock uncertainty: 1.500 ns, effective delay budget: 4.056 ns).
+WARNING: [HLS 200-1016] The critical path in module 'cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY' consists of the following:
+	'mul' operation 10 bit ('mul_ln101', cfu_hls.c:101) [50]  (6.604 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 727.688 MB.
+Execute       syn_report -verbosereport -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY.verbose.sched.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY.sched.adb -f 
+INFO-FLOW: Finish scheduling cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY.
+Execute       set_default_model cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY 
+Execute       bind -model cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 727.688 MB.
+Execute       syn_report -verbosereport -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY.verbose.bind.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY.bind.adb -f 
+INFO-FLOW: Finish binding cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cfu_hls_Pipeline_POWER_LOOP' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model cfu_hls_Pipeline_POWER_LOOP 
+Execute       schedule -model cfu_hls_Pipeline_POWER_LOOP 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'POWER_LOOP'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 9, loop 'POWER_LOOP'
+WARNING: [HLS 200-871] Estimated clock period (5.347 ns) exceeds the target (target clock period: 5.556 ns, clock uncertainty: 1.500 ns, effective delay budget: 4.056 ns).
+WARNING: [HLS 200-1016] The critical path in module 'cfu_hls_Pipeline_POWER_LOOP' consists of the following:
+	'store' operation 0 bit ('k_write_ln51', cfu_hls.c:51) of constant 0 on local variable 'k', cfu_hls.c:51 [7]  (1.610 ns)
+	'load' operation 11 bit ('k', cfu_hls.c:118) on local variable 'k', cfu_hls.c:51 [10]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln118', cfu_hls.c:118) [11]  (2.127 ns)
+	'store' operation 0 bit ('k_write_ln51', cfu_hls.c:51) of variable 'add_ln118', cfu_hls.c:118 on local variable 'k', cfu_hls.c:51 [31]  (1.610 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 727.688 MB.
+Execute       syn_report -verbosereport -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_POWER_LOOP.verbose.sched.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_POWER_LOOP.sched.adb -f 
+INFO-FLOW: Finish scheduling cfu_hls_Pipeline_POWER_LOOP.
+Execute       set_default_model cfu_hls_Pipeline_POWER_LOOP 
+Execute       bind -model cfu_hls_Pipeline_POWER_LOOP 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 727.688 MB.
+Execute       syn_report -verbosereport -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_POWER_LOOP.verbose.bind.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_POWER_LOOP.bind.adb -f 
+INFO-FLOW: Finish binding cfu_hls_Pipeline_POWER_LOOP.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cfu_hls_Pipeline_MEL_ACCUM' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model cfu_hls_Pipeline_MEL_ACCUM 
+Execute       schedule -model cfu_hls_Pipeline_MEL_ACCUM 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'MEL_ACCUM'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 9, loop 'MEL_ACCUM'
+WARNING: [HLS 200-871] Estimated clock period (5.354 ns) exceeds the target (target clock period: 5.556 ns, clock uncertainty: 1.500 ns, effective delay budget: 4.056 ns).
+WARNING: [HLS 200-1016] The critical path in module 'cfu_hls_Pipeline_MEL_ACCUM' consists of the following:
+	'store' operation 0 bit ('weight_idx_1_write_ln127', cfu_hls.c:127) of variable 'weight_idx_read' on local variable 'weight_idx', cfu_hls.c:127 [13]  (1.610 ns)
+	'load' operation 13 bit ('weight_idx', cfu_hls.c:137) on local variable 'weight_idx', cfu_hls.c:127 [20]  (0.000 ns)
+	'add' operation 13 bit ('add_ln137', cfu_hls.c:137) [36]  (2.134 ns)
+	'store' operation 0 bit ('weight_idx_1_write_ln127', cfu_hls.c:127) of variable 'add_ln137', cfu_hls.c:137 on local variable 'weight_idx', cfu_hls.c:127 [43]  (1.610 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 727.688 MB.
+Execute       syn_report -verbosereport -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_MEL_ACCUM.verbose.sched.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_MEL_ACCUM.sched.adb -f 
+INFO-FLOW: Finish scheduling cfu_hls_Pipeline_MEL_ACCUM.
+Execute       set_default_model cfu_hls_Pipeline_MEL_ACCUM 
+Execute       bind -model cfu_hls_Pipeline_MEL_ACCUM 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 727.688 MB.
+Execute       syn_report -verbosereport -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_MEL_ACCUM.verbose.bind.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_MEL_ACCUM.bind.adb -f 
+INFO-FLOW: Finish binding cfu_hls_Pipeline_MEL_ACCUM.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cfu_hls' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model cfu_hls 
+Execute       schedule -model cfu_hls 
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [HLS 200-871] Estimated clock period (5.354 ns) exceeds the target (target clock period: 5.556 ns, clock uncertainty: 1.500 ns, effective delay budget: 4.056 ns).
+WARNING: [HLS 200-1016] The critical path in module 'cfu_hls' consists of the following:
+	'call' operation 0 bit ('_ln134', cfu_hls.c:134) to 'cfu_hls_Pipeline_MEL_ACCUM' [69]  (5.354 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.1 seconds; current allocated memory: 729.617 MB.
+Execute       syn_report -verbosereport -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.verbose.sched.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.sched.adb -f 
+INFO-FLOW: Finish scheduling cfu_hls.
+Execute       set_default_model cfu_hls 
+Execute       bind -model cfu_hls 
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 729.617 MB.
+Execute       syn_report -verbosereport -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.verbose.bind.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.bind.adb -f 
+INFO-FLOW: Finish binding cfu_hls.
+Execute       get_model_list cfu_hls -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess cfu_hls_Pipeline_HANN_LOOP 
+Execute       rtl_gen_preprocess cfu_hls_Pipeline_BITREV_LOOP 
+Execute       rtl_gen_preprocess cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY 
+Execute       rtl_gen_preprocess cfu_hls_Pipeline_POWER_LOOP 
+Execute       rtl_gen_preprocess cfu_hls_Pipeline_MEL_ACCUM 
+Execute       rtl_gen_preprocess cfu_hls 
+INFO-FLOW: Model list for RTL generation: cfu_hls_Pipeline_HANN_LOOP cfu_hls_Pipeline_BITREV_LOOP cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY cfu_hls_Pipeline_POWER_LOOP cfu_hls_Pipeline_MEL_ACCUM cfu_hls
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cfu_hls_Pipeline_HANN_LOOP' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model cfu_hls_Pipeline_HANN_LOOP -top_prefix cfu_hls_ -sub_prefix cfu_hls_ -mg_file /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_HANN_LOOP.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cfu_hls_Pipeline_HANN_LOOP' pipeline 'HANN_LOOP' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_17ns_32s_48_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cfu_hls_Pipeline_HANN_LOOP'.
+INFO: [RTMG 210-279] Implementing memory 'cfu_hls_cfu_hls_Pipeline_HANN_LOOP_hann_window_fixed_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 729.617 MB.
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.rtl_wrap.cfg.tcl 
+Execute       gen_rtl cfu_hls_Pipeline_HANN_LOOP -style xilinx -f -lang vhdl -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/vhdl/cfu_hls_cfu_hls_Pipeline_HANN_LOOP 
+Execute       gen_rtl cfu_hls_Pipeline_HANN_LOOP -style xilinx -f -lang vlog -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/verilog/cfu_hls_cfu_hls_Pipeline_HANN_LOOP 
+Execute       syn_report -csynth -model cfu_hls_Pipeline_HANN_LOOP -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/cfu_hls_Pipeline_HANN_LOOP_csynth.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       syn_report -rtlxml -model cfu_hls_Pipeline_HANN_LOOP -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/cfu_hls_Pipeline_HANN_LOOP_csynth.xml 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       syn_report -verbosereport -model cfu_hls_Pipeline_HANN_LOOP -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_HANN_LOOP.verbose.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -model cfu_hls_Pipeline_HANN_LOOP -f -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_HANN_LOOP.adb 
+Execute       db_write -model cfu_hls_Pipeline_HANN_LOOP -bindview -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info cfu_hls_Pipeline_HANN_LOOP -p /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_HANN_LOOP 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cfu_hls_Pipeline_BITREV_LOOP' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model cfu_hls_Pipeline_BITREV_LOOP -top_prefix cfu_hls_ -sub_prefix cfu_hls_ -mg_file /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_BITREV_LOOP.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cfu_hls_Pipeline_BITREV_LOOP'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 729.617 MB.
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.rtl_wrap.cfg.tcl 
+Execute       gen_rtl cfu_hls_Pipeline_BITREV_LOOP -style xilinx -f -lang vhdl -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/vhdl/cfu_hls_cfu_hls_Pipeline_BITREV_LOOP 
+Execute       gen_rtl cfu_hls_Pipeline_BITREV_LOOP -style xilinx -f -lang vlog -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/verilog/cfu_hls_cfu_hls_Pipeline_BITREV_LOOP 
+Execute       syn_report -csynth -model cfu_hls_Pipeline_BITREV_LOOP -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/cfu_hls_Pipeline_BITREV_LOOP_csynth.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       syn_report -rtlxml -model cfu_hls_Pipeline_BITREV_LOOP -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/cfu_hls_Pipeline_BITREV_LOOP_csynth.xml 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       syn_report -verbosereport -model cfu_hls_Pipeline_BITREV_LOOP -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_BITREV_LOOP.verbose.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -model cfu_hls_Pipeline_BITREV_LOOP -f -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_BITREV_LOOP.adb 
+Execute       db_write -model cfu_hls_Pipeline_BITREV_LOOP -bindview -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info cfu_hls_Pipeline_BITREV_LOOP -p /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_BITREV_LOOP 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY -top_prefix cfu_hls_ -sub_prefix cfu_hls_ -mg_file /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY' pipeline 'FFT_STAGE_FFT_BUTTERFLY' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_10s_10s_10_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_17s_48_5_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_18s_48_5_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY'.
+INFO: [RTMG 210-279] Implementing memory 'cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_cos_table_fixed_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_sin_table_fixed_ROM_AUTO_1R' using auto ROMs.
+Command       create_rtl_model done; 0.11 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 731.359 MB.
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.rtl_wrap.cfg.tcl 
+Execute       gen_rtl cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY -style xilinx -f -lang vhdl -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/vhdl/cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY 
+Execute       gen_rtl cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY -style xilinx -f -lang vlog -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/verilog/cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY 
+Execute       syn_report -csynth -model cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_csynth.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       syn_report -rtlxml -model cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_csynth.xml 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       syn_report -verbosereport -model cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY.verbose.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -model cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY -f -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY.adb 
+Execute       db_write -model cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY -bindview -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY -p /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cfu_hls_Pipeline_POWER_LOOP' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model cfu_hls_Pipeline_POWER_LOOP -top_prefix cfu_hls_ -sub_prefix cfu_hls_ -mg_file /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_POWER_LOOP.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cfu_hls_Pipeline_POWER_LOOP' pipeline 'POWER_LOOP' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_58_5_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cfu_hls_Pipeline_POWER_LOOP'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 733.359 MB.
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.rtl_wrap.cfg.tcl 
+Execute       gen_rtl cfu_hls_Pipeline_POWER_LOOP -style xilinx -f -lang vhdl -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/vhdl/cfu_hls_cfu_hls_Pipeline_POWER_LOOP 
+Execute       gen_rtl cfu_hls_Pipeline_POWER_LOOP -style xilinx -f -lang vlog -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/verilog/cfu_hls_cfu_hls_Pipeline_POWER_LOOP 
+Execute       syn_report -csynth -model cfu_hls_Pipeline_POWER_LOOP -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/cfu_hls_Pipeline_POWER_LOOP_csynth.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       syn_report -rtlxml -model cfu_hls_Pipeline_POWER_LOOP -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/cfu_hls_Pipeline_POWER_LOOP_csynth.xml 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       syn_report -verbosereport -model cfu_hls_Pipeline_POWER_LOOP -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_POWER_LOOP.verbose.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -model cfu_hls_Pipeline_POWER_LOOP -f -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_POWER_LOOP.adb 
+Execute       db_write -model cfu_hls_Pipeline_POWER_LOOP -bindview -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info cfu_hls_Pipeline_POWER_LOOP -p /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_POWER_LOOP 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cfu_hls_Pipeline_MEL_ACCUM' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model cfu_hls_Pipeline_MEL_ACCUM -top_prefix cfu_hls_ -sub_prefix cfu_hls_ -mg_file /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_MEL_ACCUM.compgen.tcl 
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cfu_hls_Pipeline_MEL_ACCUM' pipeline 'MEL_ACCUM' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_16ns_32s_48_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cfu_hls_Pipeline_MEL_ACCUM'.
+INFO: [RTMG 210-279] Implementing memory 'cfu_hls_cfu_hls_Pipeline_MEL_ACCUM_mel_weights_compact_fixed_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 734.793 MB.
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.rtl_wrap.cfg.tcl 
+Execute       gen_rtl cfu_hls_Pipeline_MEL_ACCUM -style xilinx -f -lang vhdl -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/vhdl/cfu_hls_cfu_hls_Pipeline_MEL_ACCUM 
+Execute       gen_rtl cfu_hls_Pipeline_MEL_ACCUM -style xilinx -f -lang vlog -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/verilog/cfu_hls_cfu_hls_Pipeline_MEL_ACCUM 
+Execute       syn_report -csynth -model cfu_hls_Pipeline_MEL_ACCUM -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/cfu_hls_Pipeline_MEL_ACCUM_csynth.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       syn_report -rtlxml -model cfu_hls_Pipeline_MEL_ACCUM -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/cfu_hls_Pipeline_MEL_ACCUM_csynth.xml 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       syn_report -verbosereport -model cfu_hls_Pipeline_MEL_ACCUM -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_MEL_ACCUM.verbose.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -model cfu_hls_Pipeline_MEL_ACCUM -f -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_MEL_ACCUM.adb 
+Execute       db_write -model cfu_hls_Pipeline_MEL_ACCUM -bindview -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info cfu_hls_Pipeline_MEL_ACCUM -p /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_MEL_ACCUM 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cfu_hls' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       create_rtl_model cfu_hls -top_prefix  -sub_prefix cfu_hls_ -mg_file /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'cfu_hls/funct3_i' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'cfu_hls/funct7_i' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'cfu_hls/src1_i' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'cfu_hls/src2_i' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'cfu_hls/rslt_o' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'rslt_o' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on function 'cfu_hls' to 'ap_ctrl_hs' (register).
+WARNING: [RTGEN 206-101] Port 'cfu_hls/funct3_i' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'lshr_32ns_5ns_32_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cfu_hls'.
+INFO: [RTMG 210-278] Implementing memory 'cfu_hls_frame_buf_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cfu_hls_real_buf_RAM_2P_BRAM_1R1W' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cfu_hls_power_buf_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-279] Implementing memory 'cfu_hls_mel_k_start_fixed_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cfu_hls_mel_k_len_fixed_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'cfu_hls_mel_out_RAM_AUTO_1R1W' using auto RAMs.
+Command       create_rtl_model done; 0.19 sec.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.28 seconds; current allocated memory: 737.922 MB.
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.rtl_wrap.cfg.tcl 
+Execute       gen_rtl cfu_hls -istop -style xilinx -f -lang vhdl -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/vhdl/cfu_hls 
+Execute       gen_rtl cfu_hls -istop -style xilinx -f -lang vlog -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/verilog/cfu_hls 
+Execute       syn_report -csynth -model cfu_hls -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/cfu_hls_csynth.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       syn_report -rtlxml -model cfu_hls -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/cfu_hls_csynth.xml 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       syn_report -verbosereport -model cfu_hls -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.verbose.rpt 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       db_write -model cfu_hls -f -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.adb 
+Execute       db_write -model cfu_hls -bindview -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/design.bindinfo.xml 
+Execute       gen_tb_info cfu_hls -p /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls 
+Execute       export_constraint_db -f -tool general -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.constraint.tcl 
+Execute       syn_report -designview -model cfu_hls -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.design.xml 
+Execute       syn_report -csynthDesign -model cfu_hls -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth.rpt -MHOut /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/kernel_module_hierarchy.tcl 
+Execute         list_part -family xc7a35t-csg324-1 
+Execute           ap_family_info -name xc7a35t-csg324-1 -data names 
+Execute           ap_part_info -quiet -name xc7a35t-csg324-1 -data family 
+Execute       syn_report -wcfg -model cfu_hls -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model cfu_hls -o /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.protoinst 
+Execute       sc_get_clocks cfu_hls 
+Execute       sc_get_portdomain cfu_hls 
+INFO-FLOW: Model list for RTL component generation: cfu_hls_Pipeline_HANN_LOOP cfu_hls_Pipeline_BITREV_LOOP cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY cfu_hls_Pipeline_POWER_LOOP cfu_hls_Pipeline_MEL_ACCUM cfu_hls
+INFO-FLOW: Handling components in module [cfu_hls_Pipeline_HANN_LOOP] ... 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_HANN_LOOP.compgen.tcl 
+INFO-FLOW: Found component cfu_hls_mul_17ns_32s_48_5_1.
+INFO-FLOW: Append model cfu_hls_mul_17ns_32s_48_5_1
+INFO-FLOW: Found component cfu_hls_cfu_hls_Pipeline_HANN_LOOP_hann_window_fixed_ROM_AUTO_1R.
+INFO-FLOW: Append model cfu_hls_cfu_hls_Pipeline_HANN_LOOP_hann_window_fixed_ROM_AUTO_1R
+INFO-FLOW: Found component cfu_hls_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model cfu_hls_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [cfu_hls_Pipeline_BITREV_LOOP] ... 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_BITREV_LOOP.compgen.tcl 
+INFO-FLOW: Found component cfu_hls_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model cfu_hls_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY] ... 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY.compgen.tcl 
+INFO-FLOW: Found component cfu_hls_mul_32s_17s_48_5_1.
+INFO-FLOW: Append model cfu_hls_mul_32s_17s_48_5_1
+INFO-FLOW: Found component cfu_hls_mul_32s_18s_48_5_1.
+INFO-FLOW: Append model cfu_hls_mul_32s_18s_48_5_1
+INFO-FLOW: Found component cfu_hls_mul_10s_10s_10_5_1.
+INFO-FLOW: Append model cfu_hls_mul_10s_10s_10_5_1
+INFO-FLOW: Found component cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_cos_table_fixed_ROM_AUTO_1R.
+INFO-FLOW: Append model cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_cos_table_fixed_ROM_AUTO_1R
+INFO-FLOW: Found component cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_sin_table_fixed_ROM_AUTO_1R.
+INFO-FLOW: Append model cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_sin_table_fixed_ROM_AUTO_1R
+INFO-FLOW: Found component cfu_hls_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model cfu_hls_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [cfu_hls_Pipeline_POWER_LOOP] ... 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_POWER_LOOP.compgen.tcl 
+INFO-FLOW: Found component cfu_hls_mul_32s_32s_58_5_1.
+INFO-FLOW: Append model cfu_hls_mul_32s_32s_58_5_1
+INFO-FLOW: Found component cfu_hls_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model cfu_hls_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [cfu_hls_Pipeline_MEL_ACCUM] ... 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_MEL_ACCUM.compgen.tcl 
+INFO-FLOW: Found component cfu_hls_mul_16ns_32s_48_5_1.
+INFO-FLOW: Append model cfu_hls_mul_16ns_32s_48_5_1
+INFO-FLOW: Found component cfu_hls_cfu_hls_Pipeline_MEL_ACCUM_mel_weights_compact_fixed_ROM_AUTO_1R.
+INFO-FLOW: Append model cfu_hls_cfu_hls_Pipeline_MEL_ACCUM_mel_weights_compact_fixed_ROM_AUTO_1R
+INFO-FLOW: Found component cfu_hls_flow_control_loop_pipe_sequential_init.
+INFO-FLOW: Append model cfu_hls_flow_control_loop_pipe_sequential_init
+INFO-FLOW: Handling components in module [cfu_hls] ... 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.compgen.tcl 
+INFO-FLOW: Found component cfu_hls_lshr_32ns_5ns_32_2_1.
+INFO-FLOW: Append model cfu_hls_lshr_32ns_5ns_32_2_1
+INFO-FLOW: Found component cfu_hls_frame_buf_RAM_AUTO_1R1W.
+INFO-FLOW: Append model cfu_hls_frame_buf_RAM_AUTO_1R1W
+INFO-FLOW: Found component cfu_hls_real_buf_RAM_2P_BRAM_1R1W.
+INFO-FLOW: Append model cfu_hls_real_buf_RAM_2P_BRAM_1R1W
+INFO-FLOW: Found component cfu_hls_power_buf_RAM_AUTO_1R1W.
+INFO-FLOW: Append model cfu_hls_power_buf_RAM_AUTO_1R1W
+INFO-FLOW: Found component cfu_hls_mel_k_start_fixed_ROM_AUTO_1R.
+INFO-FLOW: Append model cfu_hls_mel_k_start_fixed_ROM_AUTO_1R
+INFO-FLOW: Found component cfu_hls_mel_k_len_fixed_ROM_AUTO_1R.
+INFO-FLOW: Append model cfu_hls_mel_k_len_fixed_ROM_AUTO_1R
+INFO-FLOW: Found component cfu_hls_mel_out_RAM_AUTO_1R1W.
+INFO-FLOW: Append model cfu_hls_mel_out_RAM_AUTO_1R1W
+INFO-FLOW: Append model cfu_hls_Pipeline_HANN_LOOP
+INFO-FLOW: Append model cfu_hls_Pipeline_BITREV_LOOP
+INFO-FLOW: Append model cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY
+INFO-FLOW: Append model cfu_hls_Pipeline_POWER_LOOP
+INFO-FLOW: Append model cfu_hls_Pipeline_MEL_ACCUM
+INFO-FLOW: Append model cfu_hls
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: cfu_hls_mul_17ns_32s_48_5_1 cfu_hls_cfu_hls_Pipeline_HANN_LOOP_hann_window_fixed_ROM_AUTO_1R cfu_hls_flow_control_loop_pipe_sequential_init cfu_hls_flow_control_loop_pipe_sequential_init cfu_hls_mul_32s_17s_48_5_1 cfu_hls_mul_32s_18s_48_5_1 cfu_hls_mul_10s_10s_10_5_1 cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_cos_table_fixed_ROM_AUTO_1R cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_sin_table_fixed_ROM_AUTO_1R cfu_hls_flow_control_loop_pipe_sequential_init cfu_hls_mul_32s_32s_58_5_1 cfu_hls_flow_control_loop_pipe_sequential_init cfu_hls_mul_16ns_32s_48_5_1 cfu_hls_cfu_hls_Pipeline_MEL_ACCUM_mel_weights_compact_fixed_ROM_AUTO_1R cfu_hls_flow_control_loop_pipe_sequential_init cfu_hls_lshr_32ns_5ns_32_2_1 cfu_hls_frame_buf_RAM_AUTO_1R1W cfu_hls_real_buf_RAM_2P_BRAM_1R1W cfu_hls_power_buf_RAM_AUTO_1R1W cfu_hls_mel_k_start_fixed_ROM_AUTO_1R cfu_hls_mel_k_len_fixed_ROM_AUTO_1R cfu_hls_mel_out_RAM_AUTO_1R1W cfu_hls_Pipeline_HANN_LOOP cfu_hls_Pipeline_BITREV_LOOP cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY cfu_hls_Pipeline_POWER_LOOP cfu_hls_Pipeline_MEL_ACCUM cfu_hls
+INFO-FLOW: Generating /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/autopilot.rtl.models.txt file...
+INFO-FLOW: To file: write model cfu_hls_mul_17ns_32s_48_5_1
+INFO-FLOW: To file: write model cfu_hls_cfu_hls_Pipeline_HANN_LOOP_hann_window_fixed_ROM_AUTO_1R
+INFO-FLOW: To file: write model cfu_hls_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model cfu_hls_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model cfu_hls_mul_32s_17s_48_5_1
+INFO-FLOW: To file: write model cfu_hls_mul_32s_18s_48_5_1
+INFO-FLOW: To file: write model cfu_hls_mul_10s_10s_10_5_1
+INFO-FLOW: To file: write model cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_cos_table_fixed_ROM_AUTO_1R
+INFO-FLOW: To file: write model cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_sin_table_fixed_ROM_AUTO_1R
+INFO-FLOW: To file: write model cfu_hls_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model cfu_hls_mul_32s_32s_58_5_1
+INFO-FLOW: To file: write model cfu_hls_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model cfu_hls_mul_16ns_32s_48_5_1
+INFO-FLOW: To file: write model cfu_hls_cfu_hls_Pipeline_MEL_ACCUM_mel_weights_compact_fixed_ROM_AUTO_1R
+INFO-FLOW: To file: write model cfu_hls_flow_control_loop_pipe_sequential_init
+INFO-FLOW: To file: write model cfu_hls_lshr_32ns_5ns_32_2_1
+INFO-FLOW: To file: write model cfu_hls_frame_buf_RAM_AUTO_1R1W
+INFO-FLOW: To file: write model cfu_hls_real_buf_RAM_2P_BRAM_1R1W
+INFO-FLOW: To file: write model cfu_hls_power_buf_RAM_AUTO_1R1W
+INFO-FLOW: To file: write model cfu_hls_mel_k_start_fixed_ROM_AUTO_1R
+INFO-FLOW: To file: write model cfu_hls_mel_k_len_fixed_ROM_AUTO_1R
+INFO-FLOW: To file: write model cfu_hls_mel_out_RAM_AUTO_1R1W
+INFO-FLOW: To file: write model cfu_hls_Pipeline_HANN_LOOP
+INFO-FLOW: To file: write model cfu_hls_Pipeline_BITREV_LOOP
+INFO-FLOW: To file: write model cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY
+INFO-FLOW: To file: write model cfu_hls_Pipeline_POWER_LOOP
+INFO-FLOW: To file: write model cfu_hls_Pipeline_MEL_ACCUM
+INFO-FLOW: To file: write model cfu_hls
+INFO-FLOW: Generating /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/autopilot.rtl.models.tcl file...
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate_csynth_design
+INFO-FLOW: DBG:PUTS: read_platform_lib /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/global.setting.tcl
+Execute       source /tools/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/common.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source /tools/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/op.gen 
+Execute       source /tools/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source /tools/Xilinx/Vitis/2024.2/common/technology/generic/autopilot/interface.gen 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/global.setting.tcl 
+Execute       ap_family_info -name artix7 -data parts 
+Execute       ap_part_info -name xc7a12ticsg325-1L -data info 
+Execute       source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/util.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=5.556 (was NA)
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::generate_ip_cores gen_sim_model='1' gen_fp_models='0' gen_for_export='0' dstSCDir='' dstVhdlDir='/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/vhdl' dstVlogDir='/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/vlog' tclDir='/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db' modelList='cfu_hls_mul_17ns_32s_48_5_1
+cfu_hls_cfu_hls_Pipeline_HANN_LOOP_hann_window_fixed_ROM_AUTO_1R
+cfu_hls_flow_control_loop_pipe_sequential_init
+cfu_hls_flow_control_loop_pipe_sequential_init
+cfu_hls_mul_32s_17s_48_5_1
+cfu_hls_mul_32s_18s_48_5_1
+cfu_hls_mul_10s_10s_10_5_1
+cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_cos_table_fixed_ROM_AUTO_1R
+cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_sin_table_fixed_ROM_AUTO_1R
+cfu_hls_flow_control_loop_pipe_sequential_init
+cfu_hls_mul_32s_32s_58_5_1
+cfu_hls_flow_control_loop_pipe_sequential_init
+cfu_hls_mul_16ns_32s_48_5_1
+cfu_hls_cfu_hls_Pipeline_MEL_ACCUM_mel_weights_compact_fixed_ROM_AUTO_1R
+cfu_hls_flow_control_loop_pipe_sequential_init
+cfu_hls_lshr_32ns_5ns_32_2_1
+cfu_hls_frame_buf_RAM_AUTO_1R1W
+cfu_hls_real_buf_RAM_2P_BRAM_1R1W
+cfu_hls_power_buf_RAM_AUTO_1R1W
+cfu_hls_mel_k_start_fixed_ROM_AUTO_1R
+cfu_hls_mel_k_len_fixed_ROM_AUTO_1R
+cfu_hls_mel_out_RAM_AUTO_1R1W
+cfu_hls_Pipeline_HANN_LOOP
+cfu_hls_Pipeline_BITREV_LOOP
+cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY
+cfu_hls_Pipeline_POWER_LOOP
+cfu_hls_Pipeline_MEL_ACCUM
+cfu_hls
+' expOnly='0'
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7a35t-csg324-1 -data names -quiet 
+Execute       ap_part_info -name xc7a35t-csg324-1 -data info -quiet 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/global.setting.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/global.setting.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_HANN_LOOP.compgen.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_BITREV_LOOP.compgen.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY.compgen.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_POWER_LOOP.compgen.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_MEL_ACCUM.compgen.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.compgen.tcl 
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.02 seconds; current allocated memory: 743.352 MB.
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::create_csynth_xml bind_info_var='bind_info' RtlSubPrefix='cfu_hls_' outfile=''
+INFO-FLOW: Running: create_csynth_xml read xml data
+INFO-FLOW: Done: create_csynth_xml read xml data time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml bind info
+INFO-FLOW: Done: create_csynth_xml bind info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml config info
+INFO-FLOW: Done: create_csynth_xml config info time: 0 seconds per iteration
+INFO-FLOW: Running: create_csynth_xml write xml
+INFO-FLOW: Done: create_csynth_xml write xml time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      create_csynth_xml wrote csynth_xml=/home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth.xml
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='0' modelList='cfu_hls_mul_17ns_32s_48_5_1
+cfu_hls_cfu_hls_Pipeline_HANN_LOOP_hann_window_fixed_ROM_AUTO_1R
+cfu_hls_flow_control_loop_pipe_sequential_init
+cfu_hls_flow_control_loop_pipe_sequential_init
+cfu_hls_mul_32s_17s_48_5_1
+cfu_hls_mul_32s_18s_48_5_1
+cfu_hls_mul_10s_10s_10_5_1
+cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_cos_table_fixed_ROM_AUTO_1R
+cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_sin_table_fixed_ROM_AUTO_1R
+cfu_hls_flow_control_loop_pipe_sequential_init
+cfu_hls_mul_32s_32s_58_5_1
+cfu_hls_flow_control_loop_pipe_sequential_init
+cfu_hls_mul_16ns_32s_48_5_1
+cfu_hls_cfu_hls_Pipeline_MEL_ACCUM_mel_weights_compact_fixed_ROM_AUTO_1R
+cfu_hls_flow_control_loop_pipe_sequential_init
+cfu_hls_lshr_32ns_5ns_32_2_1
+cfu_hls_frame_buf_RAM_AUTO_1R1W
+cfu_hls_real_buf_RAM_2P_BRAM_1R1W
+cfu_hls_power_buf_RAM_AUTO_1R1W
+cfu_hls_mel_k_start_fixed_ROM_AUTO_1R
+cfu_hls_mel_k_len_fixed_ROM_AUTO_1R
+cfu_hls_mel_out_RAM_AUTO_1R1W
+cfu_hls_Pipeline_HANN_LOOP
+cfu_hls_Pipeline_BITREV_LOOP
+cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY
+cfu_hls_Pipeline_POWER_LOOP
+cfu_hls_Pipeline_MEL_ACCUM
+cfu_hls
+' rtl_lang='both' bootstrap_tcl='false' outdir='' outfilename=''
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/global.setting.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/global.setting.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/top-io-be.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.tbgen.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.rtl_wrap.cfg.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.compgen.dataonly.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_HANN_LOOP.tbgen.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_BITREV_LOOP.tbgen.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY.tbgen.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_POWER_LOOP.tbgen.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls_Pipeline_MEL_ACCUM.tbgen.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.tbgen.tcl 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7a35t-csg324-1 -data names -quiet 
+Execute       ap_part_info -name xc7a35t-csg324-1 -data info -quiet 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.constraint.tcl 
+Execute       sc_get_clocks cfu_hls 
+Execute       source /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PROC: ::HLSREPORTS::add_csynth_report_sections bind_info_dict='adapter_nodes {} cache_nodes {} report_dict {TOPINST cfu_hls MODULE2INSTS {cfu_hls cfu_hls cfu_hls_Pipeline_HANN_LOOP grp_cfu_hls_Pipeline_HANN_LOOP_fu_485 cfu_hls_Pipeline_BITREV_LOOP grp_cfu_hls_Pipeline_BITREV_LOOP_fu_497 cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY grp_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_fu_505 cfu_hls_Pipeline_POWER_LOOP grp_cfu_hls_Pipeline_POWER_LOOP_fu_517 cfu_hls_Pipeline_MEL_ACCUM grp_cfu_hls_Pipeline_MEL_ACCUM_fu_527} INST2MODULE {cfu_hls cfu_hls grp_cfu_hls_Pipeline_HANN_LOOP_fu_485 cfu_hls_Pipeline_HANN_LOOP grp_cfu_hls_Pipeline_BITREV_LOOP_fu_497 cfu_hls_Pipeline_BITREV_LOOP grp_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_fu_505 cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY grp_cfu_hls_Pipeline_POWER_LOOP_fu_517 cfu_hls_Pipeline_POWER_LOOP grp_cfu_hls_Pipeline_MEL_ACCUM_fu_527 cfu_hls_Pipeline_MEL_ACCUM} INSTDATA {cfu_hls {DEPTH 1 CHILDREN {grp_cfu_hls_Pipeline_HANN_LOOP_fu_485 grp_cfu_hls_Pipeline_BITREV_LOOP_fu_497 grp_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_fu_505 grp_cfu_hls_Pipeline_POWER_LOOP_fu_517 grp_cfu_hls_Pipeline_MEL_ACCUM_fu_527}} grp_cfu_hls_Pipeline_HANN_LOOP_fu_485 {DEPTH 2 CHILDREN {}} grp_cfu_hls_Pipeline_BITREV_LOOP_fu_497 {DEPTH 2 CHILDREN {}} grp_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_fu_505 {DEPTH 2 CHILDREN {}} grp_cfu_hls_Pipeline_POWER_LOOP_fu_517 {DEPTH 2 CHILDREN {}} grp_cfu_hls_Pipeline_MEL_ACCUM_fu_527 {DEPTH 2 CHILDREN {}}} MODULEDATA {cfu_hls_Pipeline_HANN_LOOP {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln55_fu_123_p2 SOURCE cfu_hls.c:55 VARIABLE icmp_ln55 LOOP HANN_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln55_fu_129_p2 SOURCE cfu_hls.c:55 VARIABLE add_ln55 LOOP HANN_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 4 OPTYPE mul PRAGMA {} RTLNAME mul_17ns_32s_48_5_1_U1 SOURCE cfu_hls.c:57 VARIABLE mul_ln57 LOOP HANN_LOOP BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME hann_window_fixed_U SOURCE {} VARIABLE hann_window_fixed LOOP {} BUNDLEDNAME {} DSP 0 BRAM 2 URAM 0 STORAGESUBTYPE {} STORAGESIZE {17 2048 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p} VISIBLE true}} AREA {DSP 2 BRAM 2 URAM 0}} cfu_hls_Pipeline_BITREV_LOOP {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln63_fu_104_p2 SOURCE cfu_hls.c:63 VARIABLE icmp_ln63 LOOP BITREV_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln63_fu_110_p2 SOURCE cfu_hls.c:63 VARIABLE add_ln63 LOOP BITREV_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE setlt PRAGMA {} RTLNAME icmp_ln79_fu_142_p2 SOURCE cfu_hls.c:79 VARIABLE icmp_ln79 LOOP BITREV_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op setlt} VISIBLE false}} AREA {DSP 0 BRAM 0 URAM 0}} cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln88_fu_198_p2 SOURCE cfu_hls.c:88 VARIABLE icmp_ln88 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln88_fu_204_p2 SOURCE cfu_hls.c:88 VARIABLE add_ln88 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln92_fu_216_p2 SOURCE cfu_hls.c:92 VARIABLE icmp_ln92 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln88_fu_228_p3 SOURCE cfu_hls.c:88 VARIABLE select_ln88 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME stage_1_mid1_fu_234_p2 SOURCE {} VARIABLE stage_1_mid1 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME stage_13_fu_222_p2 SOURCE {} VARIABLE stage_13 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln88_1_fu_308_p3 SOURCE cfu_hls.c:88 VARIABLE select_ln88_1 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME select_ln88_2_fu_239_p3 SOURCE cfu_hls.c:88 VARIABLE select_ln88_2 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto_pipe LATENCY 0 OPTYPE shl PRAGMA {} RTLNAME half_size_fu_252_p2 SOURCE cfu_hls.c:89 VARIABLE half_size LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op shl} VISIBLE false} {BINDTYPE op ID {} IMPL auto_pipe LATENCY 0 OPTYPE lshr PRAGMA {} RTLNAME table_step_fu_262_p2 SOURCE cfu_hls.c:90 VARIABLE table_step LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op lshr} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME sub_fu_268_p2 SOURCE cfu_hls.c:89 VARIABLE sub LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto_pipe LATENCY 0 OPTYPE lshr PRAGMA {} RTLNAME group_fu_323_p2 SOURCE cfu_hls.c:96 VARIABLE group LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op lshr} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE and PRAGMA {} RTLNAME jj_fu_282_p2 SOURCE cfu_hls.c:97 VARIABLE jj LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op and} VISIBLE false} {BINDTYPE op ID {} IMPL auto_pipe LATENCY 0 OPTYPE shl PRAGMA {} RTLNAME shl_ln98_fu_329_p2 SOURCE cfu_hls.c:98 VARIABLE shl_ln98 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op shl} VISIBLE false} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE or PRAGMA {} RTLNAME or_ln98_fu_351_p2 SOURCE cfu_hls.c:98 VARIABLE or_ln98 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op or} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME idx2_fu_362_p2 SOURCE cfu_hls.c:99 VARIABLE idx2 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 4 OPTYPE mul PRAGMA {} RTLNAME mul_10s_10s_10_5_1_U13 SOURCE cfu_hls.c:101 VARIABLE mul_ln101 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 4 OPTYPE mul PRAGMA {} RTLNAME mul_32s_18s_48_5_1_U11 SOURCE cfu_hls.c:107 VARIABLE mul_ln107 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 4 OPTYPE mul PRAGMA {} RTLNAME mul_32s_17s_48_5_1_U9 SOURCE cfu_hls.c:107 VARIABLE mul_ln107_1 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME tr_fu_423_p2 SOURCE cfu_hls.c:107 VARIABLE tr LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 4 OPTYPE mul PRAGMA {} RTLNAME mul_32s_18s_48_5_1_U12 SOURCE cfu_hls.c:108 VARIABLE mul_ln108 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 4 OPTYPE mul PRAGMA {} RTLNAME mul_32s_17s_48_5_1_U10 SOURCE cfu_hls.c:108 VARIABLE mul_ln108_1 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME ti_fu_449_p2 SOURCE cfu_hls.c:108 VARIABLE ti LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln109_fu_455_p2 SOURCE cfu_hls.c:109 VARIABLE sub_ln109 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln110_fu_461_p2 SOURCE cfu_hls.c:110 VARIABLE sub_ln110 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln111_fu_467_p2 SOURCE cfu_hls.c:111 VARIABLE add_ln111 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln112_fu_472_p2 SOURCE cfu_hls.c:112 VARIABLE add_ln112 LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME k_fu_288_p2 SOURCE cfu_hls.c:92 VARIABLE k LOOP FFT_STAGE_FFT_BUTTERFLY BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME cos_table_fixed_U SOURCE {} VARIABLE cos_table_fixed LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 STORAGESUBTYPE {} STORAGESIZE {18 1024 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME sin_table_fixed_U SOURCE {} VARIABLE sin_table_fixed LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 STORAGESUBTYPE {} STORAGESIZE {17 1024 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p} VISIBLE true}} AREA {DSP 8 BRAM 2 URAM 0}} cfu_hls_Pipeline_POWER_LOOP {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln118_fu_103_p2 SOURCE cfu_hls.c:118 VARIABLE icmp_ln118 LOOP POWER_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln118_fu_109_p2 SOURCE cfu_hls.c:118 VARIABLE add_ln118 LOOP POWER_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 4 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_58_5_1_U21 SOURCE cfu_hls.c:122 VARIABLE mul_ln122 LOOP POWER_LOOP BUNDLEDNAME {} DSP 4 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 4 OPTYPE mul PRAGMA {} RTLNAME mul_32s_32s_58_5_1_U22 SOURCE cfu_hls.c:122 VARIABLE mul_ln122_1 LOOP POWER_LOOP BUNDLEDNAME {} DSP 4 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME pwr_fu_136_p2 SOURCE cfu_hls.c:122 VARIABLE pwr LOOP POWER_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true}} AREA {DSP 8 BRAM 0 URAM 0}} cfu_hls_Pipeline_MEL_ACCUM {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln134_fu_134_p2 SOURCE cfu_hls.c:134 VARIABLE icmp_ln134 LOOP MEL_ACCUM BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln134_fu_140_p2 SOURCE cfu_hls.c:134 VARIABLE add_ln134 LOOP MEL_ACCUM BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln136_fu_150_p2 SOURCE cfu_hls.c:136 VARIABLE add_ln136 LOOP MEL_ACCUM BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln137_fu_156_p2 SOURCE cfu_hls.c:137 VARIABLE add_ln137 LOOP MEL_ACCUM BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 4 OPTYPE mul PRAGMA {} RTLNAME mul_16ns_32s_48_5_1_U27 SOURCE cfu_hls.c:137 VARIABLE mul_ln137 LOOP MEL_ACCUM BUNDLEDNAME {} DSP 2 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op mul} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME mel_pwr_3_fu_199_p2 SOURCE cfu_hls.c:136 VARIABLE mel_pwr_3 LOOP MEL_ACCUM BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME mel_weights_compact_fixed_U SOURCE {} VARIABLE mel_weights_compact_fixed LOOP {} BUNDLEDNAME {} DSP 0 BRAM 2 URAM 0 STORAGESUBTYPE {} STORAGESIZE {16 1958 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p} VISIBLE true}} AREA {DSP 2 BRAM 2 URAM 0}} cfu_hls {BINDINFO {{BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln129_fu_565_p2 SOURCE cfu_hls.c:129 VARIABLE icmp_ln129 LOOP MEL_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln129_fu_571_p2 SOURCE cfu_hls.c:129 VARIABLE add_ln129 LOOP MEL_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME weight_idx_4_fu_588_p2 SOURCE cfu_hls.c:134 VARIABLE weight_idx_4 LOOP MEL_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL auto LATENCY 0 OPTYPE seteq PRAGMA {} RTLNAME icmp_ln140_fu_607_p2 SOURCE cfu_hls.c:140 VARIABLE icmp_ln140 LOOP MEL_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op seteq} VISIBLE false} {BINDTYPE op ID {} IMPL auto_sel LATENCY 0 OPTYPE select PRAGMA {} RTLNAME mel_q16_1_fu_613_p3 SOURCE cfu_hls.c:140 VARIABLE mel_q16_1 LOOP MEL_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op select} VISIBLE false} {BINDTYPE op ID {} IMPL auto_pipe LATENCY 1 OPTYPE shl PRAGMA {} RTLNAME shl_ln149_fu_879_p2 SOURCE cfu_hls.c:149 VARIABLE shl_ln149 LOOP MEL_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op shl} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln149_fu_897_p2 SOURCE cfu_hls.c:149 VARIABLE sub_ln149 LOOP MEL_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL auto_pipe LATENCY 1 OPTYPE lshr PRAGMA {} RTLNAME lshr_32ns_5ns_32_2_1_U35 SOURCE cfu_hls.c:149 VARIABLE frac LOOP MEL_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op lshr} VISIBLE false} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln151_fu_913_p2 SOURCE cfu_hls.c:151 VARIABLE add_ln151 LOOP MEL_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME log2_float_fu_930_p2 SOURCE cfu_hls.c:151 VARIABLE log2_float LOOP MEL_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln152_fu_953_p2 SOURCE cfu_hls.c:152 VARIABLE sub_ln152 LOOP MEL_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln152_fu_970_p2 SOURCE cfu_hls.c:152 VARIABLE add_ln152 LOOP MEL_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln152_1_fu_986_p2 SOURCE cfu_hls.c:152 VARIABLE add_ln152_1 LOOP MEL_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln152_2_fu_1002_p2 SOURCE cfu_hls.c:152 VARIABLE add_ln152_2 LOOP MEL_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE add PRAGMA {} RTLNAME add_ln152_3_fu_1018_p2 SOURCE cfu_hls.c:152 VARIABLE add_ln152_3 LOOP MEL_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op add} VISIBLE true} {BINDTYPE op ID {} IMPL fabric LATENCY 0 OPTYPE sub PRAGMA {} RTLNAME sub_ln152_1_fu_1026_p2 SOURCE cfu_hls.c:152 VARIABLE sub_ln152_1 LOOP MEL_LOOP BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} DISPNAME {bind_op sub} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME frame_buf_U SOURCE {} VARIABLE frame_buf LOOP {} BUNDLEDNAME {} DSP 0 BRAM 4 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 2048 1} STORAGEUSAGE ram_1p DISPNAME {bind_storage ram_1p} VISIBLE true} {BINDTYPE storage ID {} IMPL bram LATENCY 1 OPTYPE ram_2p PRAGMA pragma RTLNAME real_buf_U SOURCE {} VARIABLE real_buf LOOP {} BUNDLEDNAME {} DSP 0 BRAM 4 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 2048 1} STORAGEUSAGE ram_2p DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL bram LATENCY 1 OPTYPE ram_2p PRAGMA pragma RTLNAME imag_buf_U SOURCE {} VARIABLE imag_buf LOOP {} BUNDLEDNAME {} DSP 0 BRAM 4 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 2048 1} STORAGEUSAGE ram_2p DISPNAME {bind_storage ram_2p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME power_buf_U SOURCE {} VARIABLE power_buf LOOP {} BUNDLEDNAME {} DSP 0 BRAM 4 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 1025 1} STORAGEUSAGE ram_1p DISPNAME {bind_storage ram_1p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME mel_k_start_fixed_U SOURCE {} VARIABLE mel_k_start_fixed LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {10 32 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE rom_1p PRAGMA {} RTLNAME mel_k_len_fixed_U SOURCE {} VARIABLE mel_k_len_fixed LOOP {} BUNDLEDNAME {} DSP 0 BRAM 0 URAM 0 STORAGESUBTYPE {} STORAGESIZE {8 32 1} STORAGEUSAGE rom_1p DISPNAME {bind_storage rom_1p} VISIBLE true} {BINDTYPE storage ID {} IMPL auto LATENCY 1 OPTYPE ram_1p PRAGMA {} RTLNAME mel_out_U SOURCE {} VARIABLE mel_out LOOP {} BUNDLEDNAME {} DSP 0 BRAM 1 URAM 0 STORAGESUBTYPE {} STORAGESIZE {32 32 1} STORAGEUSAGE ram_1p DISPNAME {bind_storage ram_1p} VISIBLE true}} AREA {DSP 20 BRAM 23 URAM 0}}}}'
+INFO-FLOW: DBG:PUTS:      update_csynth_reports json2rpt_hw_sw_interfaces
+INFO-FLOW: Running: gen_csynth_sec_pragma
+INFO-FLOW: Done: gen_csynth_sec_pragma time: 0 seconds per iteration
+INFO-FLOW: DBG:PUTS:      update_csynth_reports wrote xml
+INFO-FLOW: DBG:PUTS:      update_csynth_reports appended to csynth rpt file
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.19 seconds; current allocated memory: 748.723 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for cfu_hls.
+INFO: [VLOG 209-307] Generating Verilog RTL for cfu_hls.
+Execute       syn_report -model cfu_hls -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 151.42 MHz
+Command     autosyn done; 3.32 sec.
+Command   csynth_design done; 10.38 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 

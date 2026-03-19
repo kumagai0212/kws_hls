@@ -1,0 +1,6 @@
+/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c:1151:49: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=real_buf type=ram_2p impl=bram
+                                                ^
+/home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c:1152:49: error: Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE's option 'type + impl' [clang-diagnostic-error]
+#pragma HLS BIND_STORAGE variable=imag_buf type=ram_2p impl=bram
+                                                ^

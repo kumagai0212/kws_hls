@@ -1,0 +1,14 @@
+---
+MainSourceFile:  /home/kumagai/Work/bnn/kws_hls/vitis/hls/.autopilot/db/cfu_hls.pp.0.c
+Diagnostics:     
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      38
+    FilePath:        cfu_hls.c
+    Replacements:    
+  - DiagnosticName:  clang-diagnostic-error
+    Message:         'Invalid Directive: for current device, ram_2p + bram is invalid combination for BIND_STORAGE''s option ''type + impl'''
+    FileOffset:      39
+    FilePath:        cfu_hls.c
+    Replacements:    
+...

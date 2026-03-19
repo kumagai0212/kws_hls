@@ -1,0 +1,245 @@
+<ENTRY>
+{
+ "thisFile": "/home/kumagai/Work/bnn/kws_hls/vitis/vitis.hlscompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Sun Mar 15 11:48:20 2026",
+ "timestampMillis": "1773542900612",
+ "buildStep": {
+  "cmdId": "190226b2-2699-4480-b4ca-7a5b0fffd028",
+  "name": "v++",
+  "logFile": "/home/kumagai/Work/bnn/kws_hls/vitis/logs/vitis.steps.log",
+  "commandLine": "/tools/Xilinx/2025.1/Vitis/bin/unwrapped/lnx64.o/v++  -c --mode hls --config constr/cfu_hls.cfg --work_dir vitis ",
+  "args": [
+   "-c",
+   "--mode",
+   "hls",
+   "--config",
+   "constr/cfu_hls.cfg",
+   "--work_dir",
+   "vitis"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg",
+    "content": "part=xc7a35tcsg324-1\n\n[hls]\nflow_target=vivado\npackage.output.format=rtl\npackage.output.syn=false\nsyn.top=cfu_hls\nsyn.file=cfu_hls.c\nclock=180MHz\nsyn.rtl.reset=none\nsyn.rtl.fsm_encoding=auto\nsyn.directive.interface=cfu_hls rslt_o mode=ap_none\nsyn.interface.clock_enable=0\nsyn.rtl.register_all_io=1"
+   }
+  ],
+  "cwd": "/home/kumagai/Work/bnn/kws_hls"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Mar 15 11:48:20 2026",
+ "timestampMillis": "1773542900613",
+ "status": {
+  "cmdId": "190226b2-2699-4480-b4ca-7a5b0fffd028",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Sun Mar 15 11:48:23 2026",
+ "timestampMillis": "1773542903352",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "cfu_hls",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/kumagai/Work/bnn/kws_hls/cfu_hls.c"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Sun Mar 15 11:48:23 2026",
+ "timestampMillis": "1773542903353",
+ "buildStep": {
+  "cmdId": "e8f1f3e4-9b77-460e-a8d4-dd235a6c5391",
+  "name": "",
+  "logFile": "/home/kumagai/Work/bnn/kws_hls/vitis/hls/hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/kumagai/Work/bnn/kws_hls"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Mar 15 11:48:23 2026",
+ "timestampMillis": "1773542903353",
+ "status": {
+  "cmdId": "e8f1f3e4-9b77-460e-a8d4-dd235a6c5391",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Mar 15 11:48:23 2026",
+ "timestampMillis": "1773542903353",
+ "report": {
+  "path": "/home/kumagai/Work/bnn/kws_hls/vitis/hls/hls_data.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Mar 15 11:48:23 2026",
+ "timestampMillis": "1773542903353",
+ "report": {
+  "path": "/home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Mar 15 11:48:23 2026",
+ "timestampMillis": "1773542903353",
+ "report": {
+  "path": "/home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Mar 15 11:48:33 2026",
+ "timestampMillis": "1773542913727",
+ "report": {
+  "path": "/home/kumagai/Work/bnn/kws_hls/vitis/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Mar 15 11:48:33 2026",
+ "timestampMillis": "1773542913727",
+ "report": {
+  "path": "/home/kumagai/Work/bnn/kws_hls/vitis/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Mar 15 11:48:33 2026",
+ "timestampMillis": "1773542913727",
+ "report": {
+  "path": "/home/kumagai/Work/bnn/kws_hls/vitis/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_SCHEDULE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Mar 15 11:48:33 2026",
+ "timestampMillis": "1773542913727",
+ "status": {
+  "cmdId": "e8f1f3e4-9b77-460e-a8d4-dd235a6c5391",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Sun Mar 15 11:48:33 2026",
+ "timestampMillis": "1773542913827",
+ "status": {
+  "cmdId": "190226b2-2699-4480-b4ca-7a5b0fffd028",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Mar 15 11:48:33 2026",
+ "timestampMillis": "1773542913866",
+ "report": {
+  "path": "/home/kumagai/Work/bnn/kws_hls/vitis/reports/v++_compile_vitis_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Sun Mar 15 11:48:33 2026",
+ "timestampMillis": "1773542913866",
+ "report": {
+  "path": "/home/kumagai/Work/bnn/kws_hls/vitis/reports/.db/v++_compile_vitis_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

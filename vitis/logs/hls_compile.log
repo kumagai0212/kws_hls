@@ -1,0 +1,268 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir /home/kumagai/Work/bnn/kws_hls/vitis 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=cfu_hls.c' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(8)
+INFO: [HLS 200-10] Adding design file 'cfu_hls.c' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=cfu_hls' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(7)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(4)
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'part=xc7a35tcsg324-1' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xc7a35t-csg324-1'
+INFO: [HLS 200-1465] Applying ini 'clock=180MHz' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(9)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5.556ns.
+INFO: [HLS 200-1465] Applying ini 'package.output.format=rtl' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(5)
+INFO: [HLS 200-1465] Applying ini 'syn.interface.clock_enable=0' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(13)
+INFO: [HLS 200-1465] Applying ini 'syn.rtl.fsm_encoding=auto' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(11)
+INFO: [HLS 200-1465] Applying ini 'syn.rtl.register_all_io=1' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(14)
+INFO: [HLS 200-1465] Applying ini 'syn.rtl.reset=none' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(10)
+INFO: [HLS 200-1465] Applying ini 'syn.directive.interface=cfu_hls rslt_o mode=ap_none' from /home/kumagai/Work/bnn/kws_hls/constr/cfu_hls.cfg(12)
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1.84 seconds. CPU system time: 0.17 seconds. Elapsed time: 2.06 seconds; current allocated memory: 660.078 MB.
+INFO: [HLS 200-10] Analyzing design file 'cfu_hls.c' ... 
+WARNING: [HLS 207-5292] unused parameter 'funct3_i' (cfu_hls.c:24:10)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0.13 seconds. CPU system time: 0.16 seconds. Elapsed time: 0.43 seconds; current allocated memory: 662.066 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-1995] There were 310 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 385 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 331 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 335 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 333 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 333 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 333 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 333 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 333 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 334 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 334 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 333 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 333 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 333 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 342 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 365 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/kumagai/Work/bnn/kws_hls/vitis/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-186] Unrolling loop 'LOG2_MSB' (cfu_hls.c:145:13) in function 'cfu_hls' completely with a factor of 32 (cfu_hls.c:29:0)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0.97 seconds. CPU system time: 0.18 seconds. Elapsed time: 6.25 seconds; current allocated memory: 663.648 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 663.648 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.03 seconds; current allocated memory: 664.723 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 664.863 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (cfu_hls.c:134:13) to (cfu_hls.c:129:9) in function 'cfu_hls'... converting 32 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 688.684 MB.
+INFO: [HLS 200-2061] Successfully converted nested loops 'FFT_STAGE'(cfu_hls.c:88:9) and 'FFT_BUTTERFLY'(cfu_hls.c:92:13) in function 'cfu_hls' into perfectly nested loops.
+INFO: [XFORM 203-541] Flattening a loop nest 'FFT_STAGE' (cfu_hls.c:88:9) in function 'cfu_hls'.
+WARNING: [HLS 200-1946] Dependence pragma (cfu_hls.c:94:9) in loop 'FFT_BUTTERFLY' may become invalid because the loop was flattened with the outer loop 'FFT_STAGE'.
+WARNING: [HLS 200-1946] Dependence pragma (cfu_hls.c:95:9) in loop 'FFT_BUTTERFLY' may become invalid because the loop was flattened with the outer loop 'FFT_STAGE'.
+WARNING: [HLS 200-960] Cannot flatten loop 'MEL_LOOP' (cfu_hls.c:129:9) in function 'cfu_hls' the outer loop is not a perfect loop because there is nontrivial logic before entering the inner loop.
+Resolution: For help on HLS 200-960 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-960.html
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'real_buf'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'imag_buf'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'real_buf'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'imag_buf'.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 727.688 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'cfu_hls' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cfu_hls_Pipeline_HANN_LOOP' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'HANN_LOOP'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 8, loop 'HANN_LOOP'
+WARNING: [HLS 200-871] Estimated clock period (5.351 ns) exceeds the target (target clock period: 5.556 ns, clock uncertainty: 1.500 ns, effective delay budget: 4.056 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'cfu_hls_Pipeline_HANN_LOOP' consists of the following:
+	'store' operation 0 bit ('i_write_ln51', cfu_hls.c:51) of constant 0 on local variable 'i', cfu_hls.c:51 [8]  (1.610 ns)
+	'load' operation 12 bit ('i', cfu_hls.c:55) on local variable 'i', cfu_hls.c:51 [11]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln55', cfu_hls.c:55) [12]  (2.131 ns)
+	'store' operation 0 bit ('i_write_ln51', cfu_hls.c:51) of variable 'add_ln55', cfu_hls.c:55 on local variable 'i', cfu_hls.c:51 [32]  (1.610 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.02 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.15 seconds; current allocated memory: 727.688 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 727.688 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cfu_hls_Pipeline_BITREV_LOOP' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'BITREV_LOOP'.
+WARNING: [HLS 200-880] The II Violation in module 'cfu_hls_Pipeline_BITREV_LOOP' (loop 'BITREV_LOOP'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 1) between 'store' operation 0 bit ('imag_buf_addr_write_ln81', cfu_hls.c:81) of variable 'ti', cfu_hls.c:81 on array 'imag_buf' and 'load' operation 32 bit ('imag_buf_load', cfu_hls.c:81) on array 'imag_buf'.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+WARNING: [HLS 200-880] The II Violation in module 'cfu_hls_Pipeline_BITREV_LOOP' (loop 'BITREV_LOOP'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 1) between 'store' operation 0 bit ('imag_buf_addr_write_ln81', cfu_hls.c:81) of variable 'ti', cfu_hls.c:81 on array 'imag_buf' and 'load' operation 32 bit ('imag_buf_load', cfu_hls.c:81) on array 'imag_buf'.
+Resolution: For help on HLS 200-880 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-880.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 3, Depth = 3, loop 'BITREV_LOOP'
+WARNING: [HLS 200-871] Estimated clock period (6.514 ns) exceeds the target (target clock period: 5.556 ns, clock uncertainty: 1.500 ns, effective delay budget: 4.056 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'cfu_hls_Pipeline_BITREV_LOOP' consists of the following:
+	'load' operation 32 bit ('real_buf_load', cfu_hls.c:80) on array 'real_buf' [27]  (3.257 ns)
+	'store' operation 0 bit ('real_buf_addr_1_write_ln80', cfu_hls.c:80) of variable 'real_buf_load', cfu_hls.c:80 on array 'real_buf' [28]  (3.257 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 727.688 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 727.688 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [HLS 200-1015] Estimated delay Estimated delay (6.604ns)  of 'mul' operation 10 bit ('mul_ln101', cfu_hls.c:101) exceeds the target cycle time (target cycle time: 5.556ns, clock uncertainty: 1.500ns, effective cycle time: 4.056ns).
+
+Resolution: For help on HLS 200-1015 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1015.html
+INFO: [SCHED 204-61] Pipelining loop 'FFT_STAGE_FFT_BUTTERFLY'.
+WARNING: [HLS 200-885] The II Violation in module 'cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY' (loop 'FFT_STAGE_FFT_BUTTERFLY'): Unable to schedule 'load' operation 32 bit ('r1', cfu_hls.c:105) on array 'real_buf' due to limited memory ports (II = 1). Please consider using a memory core with more ports or partitioning the array 'real_buf'.
+Resolution: For help on HLS 200-885 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-885.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 2, Depth = 16, loop 'FFT_STAGE_FFT_BUTTERFLY'
+WARNING: [HLS 200-871] Estimated clock period (6.604 ns) exceeds the target (target clock period: 5.556 ns, clock uncertainty: 1.500 ns, effective delay budget: 4.056 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY' consists of the following:
+	'mul' operation 10 bit ('mul_ln101', cfu_hls.c:101) [50]  (6.604 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.12 seconds; current allocated memory: 727.688 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 727.688 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cfu_hls_Pipeline_POWER_LOOP' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'POWER_LOOP'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 9, loop 'POWER_LOOP'
+WARNING: [HLS 200-871] Estimated clock period (5.347 ns) exceeds the target (target clock period: 5.556 ns, clock uncertainty: 1.500 ns, effective delay budget: 4.056 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'cfu_hls_Pipeline_POWER_LOOP' consists of the following:
+	'store' operation 0 bit ('k_write_ln51', cfu_hls.c:51) of constant 0 on local variable 'k', cfu_hls.c:51 [7]  (1.610 ns)
+	'load' operation 11 bit ('k', cfu_hls.c:118) on local variable 'k', cfu_hls.c:51 [10]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln118', cfu_hls.c:118) [11]  (2.127 ns)
+	'store' operation 0 bit ('k_write_ln51', cfu_hls.c:51) of variable 'add_ln118', cfu_hls.c:118 on local variable 'k', cfu_hls.c:51 [31]  (1.610 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 727.688 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 727.688 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cfu_hls_Pipeline_MEL_ACCUM' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'MEL_ACCUM'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 9, loop 'MEL_ACCUM'
+WARNING: [HLS 200-871] Estimated clock period (5.354 ns) exceeds the target (target clock period: 5.556 ns, clock uncertainty: 1.500 ns, effective delay budget: 4.056 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'cfu_hls_Pipeline_MEL_ACCUM' consists of the following:
+	'store' operation 0 bit ('weight_idx_1_write_ln127', cfu_hls.c:127) of variable 'weight_idx_read' on local variable 'weight_idx', cfu_hls.c:127 [13]  (1.610 ns)
+	'load' operation 13 bit ('weight_idx', cfu_hls.c:137) on local variable 'weight_idx', cfu_hls.c:127 [20]  (0.000 ns)
+	'add' operation 13 bit ('add_ln137', cfu_hls.c:137) [36]  (2.134 ns)
+	'store' operation 0 bit ('weight_idx_1_write_ln127', cfu_hls.c:127) of variable 'add_ln137', cfu_hls.c:137 on local variable 'weight_idx', cfu_hls.c:127 [43]  (1.610 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 727.688 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 727.688 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'cfu_hls' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [HLS 200-871] Estimated clock period (5.354 ns) exceeds the target (target clock period: 5.556 ns, clock uncertainty: 1.500 ns, effective delay budget: 4.056 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'cfu_hls' consists of the following:
+	'call' operation 0 bit ('_ln134', cfu_hls.c:134) to 'cfu_hls_Pipeline_MEL_ACCUM' [69]  (5.354 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.1 seconds; current allocated memory: 729.617 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 729.617 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cfu_hls_Pipeline_HANN_LOOP' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cfu_hls_Pipeline_HANN_LOOP' pipeline 'HANN_LOOP' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_17ns_32s_48_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cfu_hls_Pipeline_HANN_LOOP'.
+INFO: [RTMG 210-279] Implementing memory 'cfu_hls_cfu_hls_Pipeline_HANN_LOOP_hann_window_fixed_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 729.617 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cfu_hls_Pipeline_BITREV_LOOP' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cfu_hls_Pipeline_BITREV_LOOP'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.1 seconds; current allocated memory: 729.617 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY' pipeline 'FFT_STAGE_FFT_BUTTERFLY' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_10s_10s_10_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_17s_48_5_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_18s_48_5_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY'.
+INFO: [RTMG 210-279] Implementing memory 'cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_cos_table_fixed_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cfu_hls_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_sin_table_fixed_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 731.359 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cfu_hls_Pipeline_POWER_LOOP' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cfu_hls_Pipeline_POWER_LOOP' pipeline 'POWER_LOOP' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_32s_58_5_1': 2 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cfu_hls_Pipeline_POWER_LOOP'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 733.359 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cfu_hls_Pipeline_MEL_ACCUM' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'cfu_hls_Pipeline_MEL_ACCUM' pipeline 'MEL_ACCUM' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_16ns_32s_48_5_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cfu_hls_Pipeline_MEL_ACCUM'.
+INFO: [RTMG 210-279] Implementing memory 'cfu_hls_cfu_hls_Pipeline_MEL_ACCUM_mel_weights_compact_fixed_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 734.793 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'cfu_hls' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'cfu_hls/funct3_i' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'cfu_hls/funct7_i' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'cfu_hls/src1_i' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'cfu_hls/src2_i' to 'ap_none' (register).
+INFO: [RTGEN 206-500] Setting interface mode on port 'cfu_hls/rslt_o' to 'ap_none' (register).
+WARNING: [RTGEN 206-101] Port 'rslt_o' with mode 'ap_none' may require an associated data valid signal to correctly communicate with other blocks or a test bench; automatic C/RTL co-simulation may not be able to verify such a port.
+INFO: [RTGEN 206-500] Setting interface mode on function 'cfu_hls' to 'ap_ctrl_hs' (register).
+WARNING: [RTGEN 206-101] Port 'cfu_hls/funct3_i' has no fanin or fanout and is left dangling.
+               Please use C simulation to confirm this function argument can be read from or written to.
+INFO: [RTGEN 206-100] Generating core module 'lshr_32ns_5ns_32_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'cfu_hls'.
+INFO: [RTMG 210-278] Implementing memory 'cfu_hls_frame_buf_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cfu_hls_real_buf_RAM_2P_BRAM_1R1W' using block RAMs.
+INFO: [RTMG 210-278] Implementing memory 'cfu_hls_power_buf_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [RTMG 210-279] Implementing memory 'cfu_hls_mel_k_start_fixed_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'cfu_hls_mel_k_len_fixed_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-278] Implementing memory 'cfu_hls_mel_out_RAM_AUTO_1R1W' using auto RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.28 seconds; current allocated memory: 737.922 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.02 seconds; current allocated memory: 743.352 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.19 seconds; current allocated memory: 748.723 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for cfu_hls.
+INFO: [VLOG 209-307] Generating Verilog RTL for cfu_hls.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 151.42 MHz
+INFO: [HLS 200-112] Total CPU user time: 3.77 seconds. Total CPU system time: 0.6 seconds. Total elapsed time: 12.4 seconds; peak allocated memory: 748.723 MB.
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 15s

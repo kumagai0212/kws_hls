@@ -1,0 +1,924 @@
+<profile>
+    <ReportVersion>
+        <Version>2024.2</Version>
+    </ReportVersion>
+    <UserAssignments>
+        <unit>ns</unit>
+        <ProductFamily>artix7</ProductFamily>
+        <Part>xc7a35t-csg324-1</Part>
+        <TopModelName>cfu_hls</TopModelName>
+        <TargetClockPeriod>5.56</TargetClockPeriod>
+        <ClockUncertainty>1.50</ClockUncertainty>
+        <FlowTarget>vivado</FlowTarget>
+    </UserAssignments>
+    <PerformanceEstimates>
+        <PipelineType>no</PipelineType>
+        <SummaryOfTimingAnalysis>
+            <unit>ns</unit>
+            <EstimatedClockPeriod>6.604</EstimatedClockPeriod>
+        </SummaryOfTimingAnalysis>
+        <SummaryOfOverallLatency>
+            <unit>clock cycles</unit>
+            <Best-caseLatency>4</Best-caseLatency>
+            <Average-caseLatency>undef</Average-caseLatency>
+            <Worst-caseLatency>37774</Worst-caseLatency>
+            <Best-caseRealTimeLatency>26.416 ns</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>0.249 ms</Worst-caseRealTimeLatency>
+            <Interval-min>5</Interval-min>
+            <Interval-max>37775</Interval-max>
+        </SummaryOfOverallLatency>
+        <SummaryOfLoopLatency>
+            <MEL_LOOP>
+                <Slack>4.06</Slack>
+                <TripCount>32</TripCount>
+                <Latency>
+                    <range>
+                        <min>1408</min>
+                        <max>5984</max>
+                    </range>
+                </Latency>
+                <AbsoluteTimeLatency>
+                    <range>
+                        <min>9298</min>
+                        <max>39518</max>
+                    </range>
+                </AbsoluteTimeLatency>
+                <IterationLatency>
+                    <range>
+                        <min>44</min>
+                        <max>187</max>
+                    </range>
+                </IterationLatency>
+                <InstanceList/>
+            </MEL_LOOP>
+        </SummaryOfLoopLatency>
+        <SummaryOfViolations>
+            <IssueType>Timing Violation</IssueType>
+            <ViolationType>-</ViolationType>
+            <SourceLocation>cfu_hls.c:23</SourceLocation>
+            <SummaryOfLoopViolations>
+                <MEL_LOOP>
+                    <Name>MEL_LOOP</Name>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>cfu_hls.c:129</SourceLocation>
+                </MEL_LOOP>
+            </SummaryOfLoopViolations>
+        </SummaryOfViolations>
+    </PerformanceEstimates>
+    <AreaEstimates>
+        <Resources>
+            <BRAM_18K>23</BRAM_18K>
+            <DSP>20</DSP>
+            <FF>4537</FF>
+            <LUT>3140</LUT>
+            <URAM>0</URAM>
+        </Resources>
+        <AvailableResources>
+            <BRAM_18K>100</BRAM_18K>
+            <DSP>90</DSP>
+            <FF>41600</FF>
+            <LUT>20800</LUT>
+            <URAM>0</URAM>
+        </AvailableResources>
+    </AreaEstimates>
+    <InterfaceSummary>
+        <RtlPorts>
+            <name>ap_clk</name>
+            <Object>cfu_hls</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig>register</IOConfig>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_start</name>
+            <Object>cfu_hls</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig>register</IOConfig>
+            <Dir>in</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_done</name>
+            <Object>cfu_hls</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig>register</IOConfig>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_idle</name>
+            <Object>cfu_hls</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig>register</IOConfig>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>ap_ready</name>
+            <Object>cfu_hls</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig>register</IOConfig>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>funct3_i</name>
+            <Object>funct3_i</Object>
+            <Type>scalar</Type>
+            <Scope/>
+            <IOProtocol>ap_none</IOProtocol>
+            <IOConfig>register</IOConfig>
+            <Dir>in</Dir>
+            <Bits>8</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>funct7_i</name>
+            <Object>funct7_i</Object>
+            <Type>scalar</Type>
+            <Scope/>
+            <IOProtocol>ap_none</IOProtocol>
+            <IOConfig>register</IOConfig>
+            <Dir>in</Dir>
+            <Bits>8</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>src1_i</name>
+            <Object>src1_i</Object>
+            <Type>scalar</Type>
+            <Scope/>
+            <IOProtocol>ap_none</IOProtocol>
+            <IOConfig>register</IOConfig>
+            <Dir>in</Dir>
+            <Bits>32</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>src2_i</name>
+            <Object>src2_i</Object>
+            <Type>scalar</Type>
+            <Scope/>
+            <IOProtocol>ap_none</IOProtocol>
+            <IOConfig>register</IOConfig>
+            <Dir>in</Dir>
+            <Bits>32</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+        <RtlPorts>
+            <name>rslt_o</name>
+            <Object>rslt_o</Object>
+            <Type>pointer</Type>
+            <Scope/>
+            <IOProtocol>ap_none</IOProtocol>
+            <IOConfig>register</IOConfig>
+            <Dir>out</Dir>
+            <Bits>32</Bits>
+            <Attribute>data</Attribute>
+            <CType>int</CType>
+        </RtlPorts>
+    </InterfaceSummary>
+    <RTLDesignHierarchy>
+        <TopModule MAX_DEPTH="3">
+            <ModuleName>cfu_hls</ModuleName>
+            <InstancesList>
+                <Instance>
+                    <InstName>grp_cfu_hls_Pipeline_HANN_LOOP_fu_485</InstName>
+                    <ModuleName>cfu_hls_Pipeline_HANN_LOOP</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>485</ID>
+                    <BindInstances>icmp_ln55_fu_123_p2 add_ln55_fu_129_p2 mul_17ns_32s_48_5_1_U1 hann_window_fixed_U</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_cfu_hls_Pipeline_BITREV_LOOP_fu_497</InstName>
+                    <ModuleName>cfu_hls_Pipeline_BITREV_LOOP</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>497</ID>
+                    <BindInstances>icmp_ln63_fu_104_p2 add_ln63_fu_110_p2 icmp_ln79_fu_142_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY_fu_505</InstName>
+                    <ModuleName>cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>505</ID>
+                    <BindInstances>icmp_ln88_fu_198_p2 add_ln88_fu_204_p2 icmp_ln92_fu_216_p2 select_ln88_fu_228_p3 stage_1_mid1_fu_234_p2 stage_13_fu_222_p2 select_ln88_1_fu_308_p3 select_ln88_2_fu_239_p3 half_size_fu_252_p2 table_step_fu_262_p2 sub_fu_268_p2 group_fu_323_p2 jj_fu_282_p2 shl_ln98_fu_329_p2 or_ln98_fu_351_p2 idx2_fu_362_p2 mul_10s_10s_10_5_1_U13 mul_32s_18s_48_5_1_U11 mul_32s_17s_48_5_1_U9 tr_fu_423_p2 mul_32s_18s_48_5_1_U12 mul_32s_17s_48_5_1_U10 ti_fu_449_p2 sub_ln109_fu_455_p2 sub_ln110_fu_461_p2 add_ln111_fu_467_p2 add_ln112_fu_472_p2 k_fu_288_p2 cos_table_fixed_U sin_table_fixed_U</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_cfu_hls_Pipeline_POWER_LOOP_fu_517</InstName>
+                    <ModuleName>cfu_hls_Pipeline_POWER_LOOP</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>517</ID>
+                    <BindInstances>icmp_ln118_fu_103_p2 add_ln118_fu_109_p2 mul_32s_32s_58_5_1_U21 mul_32s_32s_58_5_1_U22 pwr_fu_136_p2</BindInstances>
+                </Instance>
+                <Instance>
+                    <InstName>grp_cfu_hls_Pipeline_MEL_ACCUM_fu_527</InstName>
+                    <ModuleName>cfu_hls_Pipeline_MEL_ACCUM</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>527</ID>
+                    <BindInstances>icmp_ln134_fu_134_p2 add_ln134_fu_140_p2 add_ln136_fu_150_p2 add_ln137_fu_156_p2 mul_16ns_32s_48_5_1_U27 mel_pwr_3_fu_199_p2 mel_weights_compact_fixed_U</BindInstances>
+                </Instance>
+            </InstancesList>
+            <BindInstances>icmp_ln129_fu_565_p2 add_ln129_fu_571_p2 weight_idx_4_fu_588_p2 icmp_ln140_fu_607_p2 mel_q16_1_fu_613_p3 shl_ln149_fu_879_p2 sub_ln149_fu_897_p2 lshr_32ns_5ns_32_2_1_U35 add_ln151_fu_913_p2 log2_float_fu_930_p2 sub_ln152_fu_953_p2 add_ln152_fu_970_p2 add_ln152_1_fu_986_p2 add_ln152_2_fu_1002_p2 add_ln152_3_fu_1018_p2 sub_ln152_1_fu_1026_p2 frame_buf_U real_buf_U imag_buf_U power_buf_U mel_k_start_fixed_U mel_k_len_fixed_U mel_out_U</BindInstances>
+        </TopModule>
+    </RTLDesignHierarchy>
+    <ModuleInformation>
+        <Module>
+            <Name>cfu_hls_Pipeline_HANN_LOOP</Name>
+            <Loops>
+                <HANN_LOOP/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>5.56</TargetClockPeriod>
+                    <ClockUncertainty>1.50</ClockUncertainty>
+                    <EstimatedClockPeriod>5.351</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>2056</Best-caseLatency>
+                    <Average-caseLatency>2056</Average-caseLatency>
+                    <Worst-caseLatency>2056</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>11.423 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>11.423 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>11.423 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>2049</PipelineInitiationInterval>
+                    <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <HANN_LOOP>
+                        <Name>HANN_LOOP</Name>
+                        <Slack>4.06</Slack>
+                        <TripCount>2048</TripCount>
+                        <Latency>2054</Latency>
+                        <AbsoluteTimeLatency>11.412 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>8</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </HANN_LOOP>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>Timing Violation</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>cfu_hls.c:51</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <HANN_LOOP>
+                            <Name>HANN_LOOP</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>cfu_hls.c:55</SourceLocation>
+                        </HANN_LOOP>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>2</BRAM_18K>
+                    <AVAIL_BRAM>100</AVAIL_BRAM>
+                    <UTIL_BRAM>2</UTIL_BRAM>
+                    <DSP>2</DSP>
+                    <AVAIL_DSP>90</AVAIL_DSP>
+                    <UTIL_DSP>2</UTIL_DSP>
+                    <FF>399</FF>
+                    <AVAIL_FF>41600</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>110</LUT>
+                    <AVAIL_LUT>20800</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="HANN_LOOP" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln55_fu_123_p2" SOURCE="cfu_hls.c:55" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln55" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="HANN_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln55_fu_129_p2" SOURCE="cfu_hls.c:55" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln55" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="2" ID="" IMPL="auto" LATENCY="4" LOOP="HANN_LOOP" OPTYPE="mul" PRAGMA="" RTLNAME="mul_17ns_32s_48_5_1_U1" SOURCE="cfu_hls.c:57" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln57" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="hann_window_fixed_U" SOURCE="" STORAGESIZE="17 2048 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_1p" URAM="0" VARIABLE="hann_window_fixed" VISIBLE="true"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>cfu_hls_Pipeline_BITREV_LOOP</Name>
+            <Loops>
+                <BITREV_LOOP/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>5.56</TargetClockPeriod>
+                    <ClockUncertainty>1.50</ClockUncertainty>
+                    <EstimatedClockPeriod>6.514</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>6146</Best-caseLatency>
+                    <Average-caseLatency>6146</Average-caseLatency>
+                    <Worst-caseLatency>6146</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>40.035 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>40.035 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>40.035 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>6145</PipelineInitiationInterval>
+                    <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <BITREV_LOOP>
+                        <Name>BITREV_LOOP</Name>
+                        <Slack>4.06</Slack>
+                        <TripCount>2048</TripCount>
+                        <Latency>6144</Latency>
+                        <AbsoluteTimeLatency>40.022 us</AbsoluteTimeLatency>
+                        <PipelineII>3</PipelineII>
+                        <PipelineDepth>3</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </BITREV_LOOP>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>Timing Violation</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>cfu_hls.c:51</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <BITREV_LOOP>
+                            <Name>BITREV_LOOP</Name>
+                            <IssueType>II Violation</IssueType>
+                            <ViolationType>Memory Dependency</ViolationType>
+                            <IterationDistance>1</IterationDistance>
+                            <SourceLocation>cfu_hls.c:64</SourceLocation>
+                        </BITREV_LOOP>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <FF>138</FF>
+                    <AVAIL_FF>41600</AVAIL_FF>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>161</LUT>
+                    <AVAIL_LUT>20800</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>100</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>90</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="BITREV_LOOP" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln63_fu_104_p2" SOURCE="cfu_hls.c:63" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln63" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="BITREV_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln63_fu_110_p2" SOURCE="cfu_hls.c:63" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln63" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="BITREV_LOOP" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln79_fu_142_p2" SOURCE="cfu_hls.c:79" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln79" VISIBLE="false"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>cfu_hls_Pipeline_FFT_STAGE_FFT_BUTTERFLY</Name>
+            <Loops>
+                <FFT_STAGE_FFT_BUTTERFLY/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>5.56</TargetClockPeriod>
+                    <ClockUncertainty>1.50</ClockUncertainty>
+                    <EstimatedClockPeriod>6.604</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>22543</Best-caseLatency>
+                    <Average-caseLatency>22543</Average-caseLatency>
+                    <Worst-caseLatency>22543</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.149 ms</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>0.149 ms</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.149 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>22530</PipelineInitiationInterval>
+                    <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <FFT_STAGE_FFT_BUTTERFLY>
+                        <Name>FFT_STAGE_FFT_BUTTERFLY</Name>
+                        <Slack>4.06</Slack>
+                        <TripCount>11264</TripCount>
+                        <Latency>22541</Latency>
+                        <AbsoluteTimeLatency>0.149 ms</AbsoluteTimeLatency>
+                        <PipelineII>2</PipelineII>
+                        <PipelineDepth>16</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </FFT_STAGE_FFT_BUTTERFLY>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>Timing Violation</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>cfu_hls.c:51</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <FFT_STAGE_FFT_BUTTERFLY>
+                            <Name>FFT_STAGE_FFT_BUTTERFLY</Name>
+                            <IssueType>II Violation</IssueType>
+                            <ViolationType>Resource Limitation</ViolationType>
+                            <SourceLocation>cfu_hls.c:88</SourceLocation>
+                        </FFT_STAGE_FFT_BUTTERFLY>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>2</BRAM_18K>
+                    <AVAIL_BRAM>100</AVAIL_BRAM>
+                    <UTIL_BRAM>2</UTIL_BRAM>
+                    <DSP>8</DSP>
+                    <AVAIL_DSP>90</AVAIL_DSP>
+                    <UTIL_DSP>8</UTIL_DSP>
+                    <FF>1709</FF>
+                    <AVAIL_FF>41600</AVAIL_FF>
+                    <UTIL_FF>4</UTIL_FF>
+                    <LUT>999</LUT>
+                    <AVAIL_LUT>20800</AVAIL_LUT>
+                    <UTIL_LUT>4</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln88_fu_198_p2" SOURCE="cfu_hls.c:88" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln88" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="add" PRAGMA="" RTLNAME="add_ln88_fu_204_p2" SOURCE="cfu_hls.c:88" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln88" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln92_fu_216_p2" SOURCE="cfu_hls.c:92" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln92" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="select" PRAGMA="" RTLNAME="select_ln88_fu_228_p3" SOURCE="cfu_hls.c:88" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln88" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="add" PRAGMA="" RTLNAME="stage_1_mid1_fu_234_p2" SOURCE="" STORAGESUBTYPE="" URAM="0" VARIABLE="stage_1_mid1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="add" PRAGMA="" RTLNAME="stage_13_fu_222_p2" SOURCE="" STORAGESUBTYPE="" URAM="0" VARIABLE="stage_13" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="select" PRAGMA="" RTLNAME="select_ln88_1_fu_308_p3" SOURCE="cfu_hls.c:88" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln88_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="select" PRAGMA="" RTLNAME="select_ln88_2_fu_239_p3" SOURCE="cfu_hls.c:88" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln88_2" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="shl" PRAGMA="" RTLNAME="half_size_fu_252_p2" SOURCE="cfu_hls.c:89" STORAGESUBTYPE="" URAM="0" VARIABLE="half_size" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="lshr" PRAGMA="" RTLNAME="table_step_fu_262_p2" SOURCE="cfu_hls.c:90" STORAGESUBTYPE="" URAM="0" VARIABLE="table_step" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="add" PRAGMA="" RTLNAME="sub_fu_268_p2" SOURCE="cfu_hls.c:89" STORAGESUBTYPE="" URAM="0" VARIABLE="sub" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="lshr" PRAGMA="" RTLNAME="group_fu_323_p2" SOURCE="cfu_hls.c:96" STORAGESUBTYPE="" URAM="0" VARIABLE="group" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op and" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="and" PRAGMA="" RTLNAME="jj_fu_282_p2" SOURCE="cfu_hls.c:97" STORAGESUBTYPE="" URAM="0" VARIABLE="jj" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln98_fu_329_p2" SOURCE="cfu_hls.c:98" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln98" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op or" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="or" PRAGMA="" RTLNAME="or_ln98_fu_351_p2" SOURCE="cfu_hls.c:98" STORAGESUBTYPE="" URAM="0" VARIABLE="or_ln98" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="add" PRAGMA="" RTLNAME="idx2_fu_362_p2" SOURCE="cfu_hls.c:99" STORAGESUBTYPE="" URAM="0" VARIABLE="idx2" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="0" ID="" IMPL="auto" LATENCY="4" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="mul" PRAGMA="" RTLNAME="mul_10s_10s_10_5_1_U13" SOURCE="cfu_hls.c:101" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln101" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="2" ID="" IMPL="auto" LATENCY="4" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_18s_48_5_1_U11" SOURCE="cfu_hls.c:107" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln107" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="2" ID="" IMPL="auto" LATENCY="4" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_17s_48_5_1_U9" SOURCE="cfu_hls.c:107" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln107_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="sub" PRAGMA="" RTLNAME="tr_fu_423_p2" SOURCE="cfu_hls.c:107" STORAGESUBTYPE="" URAM="0" VARIABLE="tr" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="2" ID="" IMPL="auto" LATENCY="4" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_18s_48_5_1_U12" SOURCE="cfu_hls.c:108" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln108" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="2" ID="" IMPL="auto" LATENCY="4" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_17s_48_5_1_U10" SOURCE="cfu_hls.c:108" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln108_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="add" PRAGMA="" RTLNAME="ti_fu_449_p2" SOURCE="cfu_hls.c:108" STORAGESUBTYPE="" URAM="0" VARIABLE="ti" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln109_fu_455_p2" SOURCE="cfu_hls.c:109" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln109" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln110_fu_461_p2" SOURCE="cfu_hls.c:110" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln110" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="add" PRAGMA="" RTLNAME="add_ln111_fu_467_p2" SOURCE="cfu_hls.c:111" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln111" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="add" PRAGMA="" RTLNAME="add_ln112_fu_472_p2" SOURCE="cfu_hls.c:112" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln112" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="FFT_STAGE_FFT_BUTTERFLY" OPTYPE="add" PRAGMA="" RTLNAME="k_fu_288_p2" SOURCE="cfu_hls.c:92" STORAGESUBTYPE="" URAM="0" VARIABLE="k" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="cos_table_fixed_U" SOURCE="" STORAGESIZE="18 1024 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_1p" URAM="0" VARIABLE="cos_table_fixed" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="sin_table_fixed_U" SOURCE="" STORAGESIZE="17 1024 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_1p" URAM="0" VARIABLE="sin_table_fixed" VISIBLE="true"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>cfu_hls_Pipeline_POWER_LOOP</Name>
+            <Loops>
+                <POWER_LOOP/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>5.56</TargetClockPeriod>
+                    <ClockUncertainty>1.50</ClockUncertainty>
+                    <EstimatedClockPeriod>5.347</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>1034</Best-caseLatency>
+                    <Average-caseLatency>1034</Average-caseLatency>
+                    <Worst-caseLatency>1034</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>5.745 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>5.745 us</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>5.745 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>1026</PipelineInitiationInterval>
+                    <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <POWER_LOOP>
+                        <Name>POWER_LOOP</Name>
+                        <Slack>4.06</Slack>
+                        <TripCount>1025</TripCount>
+                        <Latency>1032</Latency>
+                        <AbsoluteTimeLatency>5.734 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>9</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </POWER_LOOP>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>Timing Violation</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>cfu_hls.c:51</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <POWER_LOOP>
+                            <Name>POWER_LOOP</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>cfu_hls.c:118</SourceLocation>
+                        </POWER_LOOP>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <DSP>8</DSP>
+                    <AVAIL_DSP>90</AVAIL_DSP>
+                    <UTIL_DSP>8</UTIL_DSP>
+                    <FF>745</FF>
+                    <AVAIL_FF>41600</AVAIL_FF>
+                    <UTIL_FF>1</UTIL_FF>
+                    <LUT>173</LUT>
+                    <AVAIL_LUT>20800</AVAIL_LUT>
+                    <UTIL_LUT>~0</UTIL_LUT>
+                    <BRAM_18K>0</BRAM_18K>
+                    <AVAIL_BRAM>100</AVAIL_BRAM>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="POWER_LOOP" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln118_fu_103_p2" SOURCE="cfu_hls.c:118" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln118" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="POWER_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln118_fu_109_p2" SOURCE="cfu_hls.c:118" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln118" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="4" ID="" IMPL="auto" LATENCY="4" LOOP="POWER_LOOP" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_58_5_1_U21" SOURCE="cfu_hls.c:122" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln122" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="4" ID="" IMPL="auto" LATENCY="4" LOOP="POWER_LOOP" OPTYPE="mul" PRAGMA="" RTLNAME="mul_32s_32s_58_5_1_U22" SOURCE="cfu_hls.c:122" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln122_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="POWER_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="pwr_fu_136_p2" SOURCE="cfu_hls.c:122" STORAGESUBTYPE="" URAM="0" VARIABLE="pwr" VISIBLE="true"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>cfu_hls_Pipeline_MEL_ACCUM</Name>
+            <Loops>
+                <MEL_ACCUM/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>5.56</TargetClockPeriod>
+                    <ClockUncertainty>1.50</ClockUncertainty>
+                    <EstimatedClockPeriod>5.354</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>24</Best-caseLatency>
+                    <Average-caseLatency>undef</Average-caseLatency>
+                    <Worst-caseLatency>167</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>0.133 us</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.928 us</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>15 ~ 158</PipelineInitiationInterval>
+                    <PipelineType>loop auto-rewind stp (delay=0 clock cycles(s))</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <MEL_ACCUM>
+                        <Name>MEL_ACCUM</Name>
+                        <Slack>4.06</Slack>
+                        <TripCount>
+                            <range>
+                                <min>14</min>
+                                <max>157</max>
+                            </range>
+                        </TripCount>
+                        <Latency>22 ~ 165</Latency>
+                        <AbsoluteTimeLatency>0.122 us ~ 0.917 us</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>9</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </MEL_ACCUM>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>Timing Violation</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>cfu_hls.c:130</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <MEL_ACCUM>
+                            <Name>MEL_ACCUM</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>cfu_hls.c:134</SourceLocation>
+                        </MEL_ACCUM>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>2</BRAM_18K>
+                    <AVAIL_BRAM>100</AVAIL_BRAM>
+                    <UTIL_BRAM>2</UTIL_BRAM>
+                    <DSP>2</DSP>
+                    <AVAIL_DSP>90</AVAIL_DSP>
+                    <UTIL_DSP>2</UTIL_DSP>
+                    <FF>494</FF>
+                    <AVAIL_FF>41600</AVAIL_FF>
+                    <UTIL_FF>1</UTIL_FF>
+                    <LUT>233</LUT>
+                    <AVAIL_LUT>20800</AVAIL_LUT>
+                    <UTIL_LUT>1</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MEL_ACCUM" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln134_fu_134_p2" SOURCE="cfu_hls.c:134" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln134" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MEL_ACCUM" OPTYPE="add" PRAGMA="" RTLNAME="add_ln134_fu_140_p2" SOURCE="cfu_hls.c:134" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln134" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MEL_ACCUM" OPTYPE="add" PRAGMA="" RTLNAME="add_ln136_fu_150_p2" SOURCE="cfu_hls.c:136" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln136" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MEL_ACCUM" OPTYPE="add" PRAGMA="" RTLNAME="add_ln137_fu_156_p2" SOURCE="cfu_hls.c:137" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln137" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op mul" DSP="2" ID="" IMPL="auto" LATENCY="4" LOOP="MEL_ACCUM" OPTYPE="mul" PRAGMA="" RTLNAME="mul_16ns_32s_48_5_1_U27" SOURCE="cfu_hls.c:137" STORAGESUBTYPE="" URAM="0" VARIABLE="mul_ln137" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MEL_ACCUM" OPTYPE="add" PRAGMA="" RTLNAME="mel_pwr_3_fu_199_p2" SOURCE="cfu_hls.c:136" STORAGESUBTYPE="" URAM="0" VARIABLE="mel_pwr_3" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="2" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="mel_weights_compact_fixed_U" SOURCE="" STORAGESIZE="16 1958 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_1p" URAM="0" VARIABLE="mel_weights_compact_fixed" VISIBLE="true"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>cfu_hls</Name>
+            <Loops>
+                <MEL_LOOP/>
+            </Loops>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>5.56</TargetClockPeriod>
+                    <ClockUncertainty>1.50</ClockUncertainty>
+                    <EstimatedClockPeriod>6.604</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>4</Best-caseLatency>
+                    <Average-caseLatency>undef</Average-caseLatency>
+                    <Worst-caseLatency>37774</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>26.416 ns</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>0.249 ms</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>5 ~ 37775</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <MEL_LOOP>
+                        <Name>MEL_LOOP</Name>
+                        <Slack>4.06</Slack>
+                        <TripCount>32</TripCount>
+                        <Latency>1408 ~ 5984</Latency>
+                        <AbsoluteTimeLatency>9.298 us ~ 39.518 us</AbsoluteTimeLatency>
+                        <IterationLatency>
+                            <range>
+                                <min>44</min>
+                                <max>187</max>
+                            </range>
+                        </IterationLatency>
+                        <PipelineDepth>44 ~ 187</PipelineDepth>
+                        <PipelineType>no</PipelineType>
+                        <InstanceList>
+                            <Instance>grp_cfu_hls_Pipeline_MEL_ACCUM_fu_527</Instance>
+                        </InstanceList>
+                    </MEL_LOOP>
+                </SummaryOfLoopLatency>
+                <SummaryOfViolations>
+                    <IssueType>Timing Violation</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>cfu_hls.c:23</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <MEL_LOOP>
+                            <Name>MEL_LOOP</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>cfu_hls.c:129</SourceLocation>
+                        </MEL_LOOP>
+                    </SummaryOfLoopViolations>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>23</BRAM_18K>
+                    <AVAIL_BRAM>100</AVAIL_BRAM>
+                    <UTIL_BRAM>23</UTIL_BRAM>
+                    <DSP>20</DSP>
+                    <AVAIL_DSP>90</AVAIL_DSP>
+                    <UTIL_DSP>22</UTIL_DSP>
+                    <FF>4537</FF>
+                    <AVAIL_FF>41600</AVAIL_FF>
+                    <UTIL_FF>10</UTIL_FF>
+                    <LUT>3140</LUT>
+                    <AVAIL_LUT>20800</AVAIL_LUT>
+                    <UTIL_LUT>15</UTIL_LUT>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MEL_LOOP" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln129_fu_565_p2" SOURCE="cfu_hls.c:129" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln129" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MEL_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln129_fu_571_p2" SOURCE="cfu_hls.c:129" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln129" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MEL_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="weight_idx_4_fu_588_p2" SOURCE="cfu_hls.c:134" STORAGESUBTYPE="" URAM="0" VARIABLE="weight_idx_4" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="MEL_LOOP" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln140_fu_607_p2" SOURCE="cfu_hls.c:140" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln140" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="MEL_LOOP" OPTYPE="select" PRAGMA="" RTLNAME="mel_q16_1_fu_613_p3" SOURCE="cfu_hls.c:140" STORAGESUBTYPE="" URAM="0" VARIABLE="mel_q16_1" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op shl" DSP="0" ID="" IMPL="auto_pipe" LATENCY="1" LOOP="MEL_LOOP" OPTYPE="shl" PRAGMA="" RTLNAME="shl_ln149_fu_879_p2" SOURCE="cfu_hls.c:149" STORAGESUBTYPE="" URAM="0" VARIABLE="shl_ln149" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MEL_LOOP" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln149_fu_897_p2" SOURCE="cfu_hls.c:149" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln149" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op lshr" DSP="0" ID="" IMPL="auto_pipe" LATENCY="1" LOOP="MEL_LOOP" OPTYPE="lshr" PRAGMA="" RTLNAME="lshr_32ns_5ns_32_2_1_U35" SOURCE="cfu_hls.c:149" STORAGESUBTYPE="" URAM="0" VARIABLE="frac" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MEL_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln151_fu_913_p2" SOURCE="cfu_hls.c:151" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln151" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MEL_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="log2_float_fu_930_p2" SOURCE="cfu_hls.c:151" STORAGESUBTYPE="" URAM="0" VARIABLE="log2_float" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MEL_LOOP" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln152_fu_953_p2" SOURCE="cfu_hls.c:152" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln152" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MEL_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln152_fu_970_p2" SOURCE="cfu_hls.c:152" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln152" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MEL_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln152_1_fu_986_p2" SOURCE="cfu_hls.c:152" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln152_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MEL_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln152_2_fu_1002_p2" SOURCE="cfu_hls.c:152" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln152_2" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MEL_LOOP" OPTYPE="add" PRAGMA="" RTLNAME="add_ln152_3_fu_1018_p2" SOURCE="cfu_hls.c:152" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln152_3" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op sub" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="MEL_LOOP" OPTYPE="sub" PRAGMA="" RTLNAME="sub_ln152_1_fu_1026_p2" SOURCE="cfu_hls.c:152" STORAGESUBTYPE="" URAM="0" VARIABLE="sub_ln152_1" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="4" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="frame_buf_U" SOURCE="" STORAGESIZE="32 2048 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_1p" URAM="0" VARIABLE="frame_buf" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="4" BUNDLEDNAME="" DISPNAME="bind_storage ram_2p" DSP="0" ID="" IMPL="bram" LATENCY="1" LOOP="" OPTYPE="ram_2p" PRAGMA="pragma" RTLNAME="real_buf_U" SOURCE="" STORAGESIZE="32 2048 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_2p" URAM="0" VARIABLE="real_buf" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="4" BUNDLEDNAME="" DISPNAME="bind_storage ram_2p" DSP="0" ID="" IMPL="bram" LATENCY="1" LOOP="" OPTYPE="ram_2p" PRAGMA="pragma" RTLNAME="imag_buf_U" SOURCE="" STORAGESIZE="32 2048 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_2p" URAM="0" VARIABLE="imag_buf" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="4" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="power_buf_U" SOURCE="" STORAGESIZE="32 1025 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_1p" URAM="0" VARIABLE="power_buf" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="mel_k_start_fixed_U" SOURCE="" STORAGESIZE="10 32 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_1p" URAM="0" VARIABLE="mel_k_start_fixed" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_storage rom_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="rom_1p" PRAGMA="" RTLNAME="mel_k_len_fixed_U" SOURCE="" STORAGESIZE="8 32 1" STORAGESUBTYPE="" STORAGEUSAGE="rom_1p" URAM="0" VARIABLE="mel_k_len_fixed" VISIBLE="true"/>
+                <BindNode BINDTYPE="storage" BRAM="1" BUNDLEDNAME="" DISPNAME="bind_storage ram_1p" DSP="0" ID="" IMPL="auto" LATENCY="1" LOOP="" OPTYPE="ram_1p" PRAGMA="" RTLNAME="mel_out_U" SOURCE="" STORAGESIZE="32 32 1" STORAGESUBTYPE="" STORAGEUSAGE="ram_1p" URAM="0" VARIABLE="mel_out" VISIBLE="true"/>
+            </BindNodes>
+        </Module>
+    </ModuleInformation>
+    <FIFOInformation/>
+    <UserConfigCommands>
+        <config_export format="rtl"/>
+        <config_rtl fsm_encoding="auto" register_all_io="1" reset="none"/>
+    </UserConfigCommands>
+    <Args>
+        <Arg ArgName="funct3_i" index="0" direction="in" srcType="char" srcSize="8">
+            <hwRefs>
+                <hwRef type="port" interface="funct3_i" name="funct3_i" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="funct7_i" index="1" direction="in" srcType="char" srcSize="8">
+            <hwRefs>
+                <hwRef type="port" interface="funct7_i" name="funct7_i" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="src1_i" index="2" direction="in" srcType="int" srcSize="32">
+            <hwRefs>
+                <hwRef type="port" interface="src1_i" name="src1_i" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="src2_i" index="3" direction="in" srcType="int" srcSize="32">
+            <hwRefs>
+                <hwRef type="port" interface="src2_i" name="src2_i" usage="data" direction="in"/>
+            </hwRefs>
+        </Arg>
+        <Arg ArgName="rslt_o" index="4" direction="out" srcType="int*" srcSize="32">
+            <hwRefs>
+                <hwRef type="port" interface="rslt_o" name="rslt_o" usage="data" direction="out"/>
+            </hwRefs>
+        </Arg>
+    </Args>
+    <Interfaces>
+        <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
+            <portMaps>
+                <portMap portMapName="ap_clk">CLK</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_clk</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="ap_ctrl" type="ap_ctrl" busTypeName="acc_handshake" mode="slave">
+            <portMaps>
+                <portMap portMapName="ap_start">start</portMap>
+                <portMap portMapName="ap_done">done</portMap>
+                <portMap portMapName="ap_idle">idle</portMap>
+                <portMap portMapName="ap_ready">ready</portMap>
+            </portMaps>
+            <ports>
+                <port>ap_done</port>
+                <port>ap_idle</port>
+                <port>ap_ready</port>
+                <port>ap_start</port>
+            </ports>
+        </Interface>
+        <Interface InterfaceName="funct3_i" type="data" busTypeName="data" protocol="ap_none" mode="slave" dataWidth="8">
+            <portMaps>
+                <portMap portMapName="funct3_i">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>funct3_i</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_none" register_option="0" argName="funct3_i"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="funct7_i" type="data" busTypeName="data" protocol="ap_none" mode="slave" dataWidth="8">
+            <portMaps>
+                <portMap portMapName="funct7_i">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>funct7_i</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_none" register_option="0" argName="funct7_i"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="src1_i" type="data" busTypeName="data" protocol="ap_none" mode="slave" dataWidth="32">
+            <portMaps>
+                <portMap portMapName="src1_i">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>src1_i</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_none" register_option="0" argName="src1_i"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="src2_i" type="data" busTypeName="data" protocol="ap_none" mode="slave" dataWidth="32">
+            <portMaps>
+                <portMap portMapName="src2_i">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>src2_i</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_none" register_option="0" argName="src2_i"/>
+            </constraints>
+        </Interface>
+        <Interface InterfaceName="rslt_o" type="data" busTypeName="data" protocol="ap_none" mode="master" dataWidth="32">
+            <portMaps>
+                <portMap portMapName="rslt_o">DATA</portMap>
+            </portMaps>
+            <ports>
+                <port>rslt_o</port>
+            </ports>
+            <constraints>
+                <constraint constraint_type="pragma interface" mode="ap_none" register_option="0" argName="rslt_o"/>
+            </constraints>
+        </Interface>
+    </Interfaces>
+    <ReportHWInterface>
+        <section name="HW Interfaces" level="0">
+            <item name="Other Ports">
+                <table>
+                    <keys size="4">Port, Mode, Direction, Bitwidth</keys>
+                    <column name="funct3_i">ap_none, in, 8</column>
+                    <column name="funct7_i">ap_none, in, 8</column>
+                    <column name="rslt_o">ap_none, out, 32</column>
+                    <column name="src1_i">ap_none, in, 32</column>
+                    <column name="src2_i">ap_none, in, 32</column>
+                </table>
+            </item>
+            <item name="TOP LEVEL CONTROL">
+                <table>
+                    <keys size="3">Interface, Type, Ports</keys>
+                    <column name="ap_clk">clock, ap_clk</column>
+                    <column name="ap_ctrl">ap_ctrl_hs, ap_done ap_idle ap_ready ap_start</column>
+                </table>
+            </item>
+        </section>
+    </ReportHWInterface>
+    <ReportSWInterface>
+        <section name="SW I/O Information" level="0">
+            <item name="Top Function Arguments">
+                <table>
+                    <keys size="3">Argument, Direction, Datatype</keys>
+                    <column name="funct3_i">in, char</column>
+                    <column name="funct7_i">in, char</column>
+                    <column name="src1_i">in, int</column>
+                    <column name="src2_i">in, int</column>
+                    <column name="rslt_o">out, int*</column>
+                </table>
+            </item>
+            <item name="SW-to-HW Mapping">
+                <table>
+                    <keys size="3">Argument, HW Interface, HW Type</keys>
+                    <column name="funct3_i">funct3_i, port</column>
+                    <column name="funct7_i">funct7_i, port</column>
+                    <column name="src1_i">src1_i, port</column>
+                    <column name="src2_i">src2_i, port</column>
+                    <column name="rslt_o">rslt_o, port</column>
+                </table>
+            </item>
+        </section>
+    </ReportSWInterface>
+    <ResolutionUrl key="ZZZ">docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&amp;url=ug1448-hls-guidance&amp;resourceid=ZZZ.html</ResolutionUrl>
+    <PragmaReport>
+        <Pragma type="bind_storage" location="cfu_hls.c:38" status="valid" parentFunction="cfu_hls" variable="real_buf" isDirective="0" options="variable=real_buf type=ram_2p impl=bram"/>
+        <Pragma type="bind_storage" location="cfu_hls.c:39" status="valid" parentFunction="cfu_hls" variable="imag_buf" isDirective="0" options="variable=imag_buf type=ram_2p impl=bram"/>
+        <Pragma type="pipeline" location="cfu_hls.c:56" status="valid" parentFunction="cfu_hls" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="pipeline" location="cfu_hls.c:64" status="valid" parentFunction="cfu_hls" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="pipeline" location="cfu_hls.c:93" status="valid" parentFunction="cfu_hls" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="dependence" location="cfu_hls.c:94" status="valid" parentFunction="cfu_hls" variable="real_buf" isDirective="0" options="variable=real_buf inter false"/>
+        <Pragma type="dependence" location="cfu_hls.c:95" status="valid" parentFunction="cfu_hls" variable="imag_buf" isDirective="0" options="variable=imag_buf inter false"/>
+        <Pragma type="pipeline" location="cfu_hls.c:119" status="valid" parentFunction="cfu_hls" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="pipeline" location="cfu_hls.c:135" status="valid" parentFunction="cfu_hls" variable="" isDirective="0" options="II=1"/>
+        <Pragma type="unroll" location="cfu_hls.c:146" status="valid" parentFunction="cfu_hls" variable="" isDirective="0" options=""/>
+        <Pragma type="interface" location="constr/cfu_hls.cfg:12" status="valid" parentFunction="cfu_hls" variable="rslt_o" isDirective="1" options="ap_none port=rslt_o"/>
+    </PragmaReport>
+</profile>
+
