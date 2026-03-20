@@ -5,7 +5,7 @@
 
 `include "config.vh"
 
-`define UART_CNT 120  // UART wait count, 120MHz / 120 = 1Mbaud  
+`define UART_CNT (`CLK_FREQ_MHZ * 1000000 / `BAUD_RATE)  // UART wait count
 module m_uart_rx (
     input  wire       w_clk,   // clock signal
     input  wire       w_rxd,   // UART rx, data line from PC to FPGA
@@ -124,12 +124,16 @@ module main (
     reg rdata_sel = 0;
     reg rdata_sel_rbuf = 0;
     reg rdata_sel_uart = 0;
+    reg rdata_sel_bnn = 0;
     always @(posedge clk) begin
         rdata_sel <= dbus_addr[30];
         rdata_sel_rbuf <= (dbus_addr[29:28]==2'b11) & (dbus_addr[7:2] == 6'b1000_00);
         rdata_sel_uart <= (dbus_addr == 32'h30000088); // ★追加
+        rdata_sel_bnn  <= (dbus_addr[29:28]==2'b11) & dbus_addr[12]; // 0x30001xxx
     end
+    wire [31:0] bnn_accel_rdata;
     assign dbus_rdata = (rdata_sel) ? perf_rdata : 
+                        (rdata_sel_bnn)  ? bnn_accel_rdata :
                         (rdata_sel_rbuf) ? mmio_rbuf_rdata :
                         (rdata_sel_uart) ? {31'd0, !uart_ready} : // ★追加: busyフラグ(!ready)をBit0で返す 
                         dmem_rdata;
@@ -142,8 +146,8 @@ module main (
     reg r_uart_tx_en = 0;
 
     uart_bridge #(
-        .SYSTEM_CLOCK(120000000), // FPGAのクロック周波数 (120MHz)
-        .UART_CLOCK(1000000)      // ★高速化のため 1Mbaud に設定
+        .SYSTEM_CLOCK(`CLK_FREQ_MHZ * 1000000),
+        .UART_CLOCK(`BAUD_RATE)
     ) my_uart (
         .clk_i(clk),
         .tx_o(txd_o),
@@ -198,11 +202,11 @@ module main (
 //    wire [31:0] dmem_addr  = dbus_addr;
 //    wire [31:0] dmem_wdata = dbus_wdata;
 //    wire  [3:0] dmem_wstrb = dbus_wstrb;
-    wire        dmem_we    = r_init_done ? dbus_we & (dbus_addr[28]) : (r_init_v && (r_byte_cnt>=`IMEM_SIZE));
+    wire        dmem_we    = r_init_done ? dbus_we & (dbus_addr[28]) & !dbus_addr[29] : (r_init_v && (r_byte_cnt>=`IMEM_SIZE));
     wire [31:0] dmem_addr  = r_init_done ? dbus_addr : (r_init_addr - `IMEM_SIZE);
     wire [31:0] dmem_wdata = r_init_done ? dbus_wdata : r_init_data;
     wire [3:0]  dmem_wstrb = r_init_done ? dbus_wstrb : 4'b1111;
-    wire        dmem_re    = r_init_done ? !dbus_we & (dbus_addr[28]) : 0;
+    wire        dmem_re    = r_init_done ? !dbus_we & (dbus_addr[28]) & !dbus_addr[29] : 0;
     
     wire [31:0] dmem_rdata;
     m_dmem dmem (
@@ -291,6 +295,22 @@ module main (
     reg [31:0] mmio_rbuf_rdata = 0;
     always @(posedge clk) 
       mmio_rbuf_rdata <= {1'b0, fifo_empty, 12'd0, fifo_rdata}; // Ma stage
+
+    // ===================================================
+    // BNN RTL Accelerator (MMIO 0x30001000 - 0x30001FFF)
+    // ===================================================
+    wire bnn_we = dbus_we & (dbus_addr[29:28]==2'b11) & dbus_addr[12];
+    wire bnn_re = !dbus_we & (dbus_addr[29:28]==2'b11) & dbus_addr[12];
+
+    bnn_accel bnn_accel_inst (
+        .clk_i   (clk),
+        .rst_i   (rst),
+        .we_i    (bnn_we),
+        .re_i    (bnn_re),
+        .addr_i  (dbus_addr[11:0]),
+        .wdata_i (dbus_wdata),
+        .rdata_o (bnn_accel_rdata)
+    );
 endmodule
 
 module m_imem (

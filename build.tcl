@@ -4,7 +4,7 @@
 set top_dir [pwd]
 set proj_name main
 set part_name xc7a100tcsg324-1
-set src_files [list $top_dir/config.vh $top_dir/proc.v $top_dir/cfu.v $top_dir/main.v $top_dir/uart_bridge.v]
+set src_files [list $top_dir/config.vh $top_dir/proc.v $top_dir/cfu.v $top_dir/main.v $top_dir/uart_bridge.v $top_dir/bnn_accel.v $top_dir/bnn_inference.v $top_dir/bnn_addr.vh]
 set use_hls [expr {[lsearch $argv "--hls"] >= 0}]
 set nproc [exec nproc]
 
@@ -23,6 +23,14 @@ set_property strategy Flow_PerfOptimized_high [get_runs synth_1]
 set_property strategy Performance_ExplorePostRoutePhysOpt [get_runs impl_1]
 
 add_files -force -scan_for_includes $src_files
+
+# BNN weight hex files (loaded by $readmemh in bnn_inference.v)
+set bnn_hex_files [glob -nocomplain $top_dir/bnn_*.hex]
+if {[llength $bnn_hex_files] > 0} {
+    add_files -force -norecurse $bnn_hex_files
+    puts "Added [llength $bnn_hex_files] BNN hex files"
+}
+
 if {$use_hls} {
     set hls_files [glob -nocomplain $top_dir/cfu/*.v]
     if {[llength $hls_files] > 0} {
