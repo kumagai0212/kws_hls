@@ -65,18 +65,20 @@ run:
 drun:
 	./obj_dir/top | build/dispemu 2
 
-TCL_ARG := $(if $(filter 1,$(USE_HLS)),--hls,)
+TCL_ARG := $(if $(filter 1,$(USE_HLS)),--hls,)$(if $(filter 1,$(USE_NONCPU)), --noncpu,)
 bit:
-	@if [ ! -f memi.txt ] || [ ! -f memd.txt ]; then \
-		echo "Please run 'make prog' first."; \
-		exit 1; \
+	@if [ "$(USE_NONCPU)" != "1" ]; then \
+		if [ ! -f memi.txt ] || [ ! -f memd.txt ]; then \
+			echo "Please run 'make prog' first."; \
+			exit 1; \
+		fi; \
 	fi
 	@if [ ! -f build.tcl ]; then \
 		echo "Plese run 'make init' first."; \
 		exit 1; \
 	fi
 	$(VIVADO) -mode batch -source build.tcl -tclargs $(TCL_ARG)
-	cp vivado/main.runs/impl_1/main.bit build/.
+	cp vivado/main.runs/impl_1/*.bit build/.
 	@if [ -f vivado/main.runs/impl_i/main.ltx ]; then \
 		cp -f vivado/main.runs/impl_i/main.ltx build/.; \
 	fi

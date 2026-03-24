@@ -6,6 +6,13 @@ set proj_name main
 set part_name xc7a100tcsg324-1
 set src_files [list $top_dir/config.vh $top_dir/proc.v $top_dir/cfu.v $top_dir/main.v $top_dir/uart_bridge.v $top_dir/bnn_accel.v $top_dir/bnn_inference.v $top_dir/bnn_addr.vh]
 set use_hls [expr {[lsearch $argv "--hls"] >= 0}]
+set use_noncpu [expr {[lsearch $argv "--noncpu"] >= 0}]
+
+if {$use_noncpu} {
+    # CPU-less build: add kws_top_noncpu.v + hls_ctrl.v, keep main.v for sub-modules
+    lappend src_files $top_dir/kws_top_noncpu.v $top_dir/hls_ctrl.v
+    puts "Building CPU-less configuration (top=kws_top_noncpu)"
+}
 set nproc [exec nproc]
 
 set file [open "$top_dir/config.vh"]
@@ -68,6 +75,12 @@ generate_target all [get_files  $top_dir/vivado/$proj_name.srcs/sources_1/ip/clk
 create_ip_run [get_ips clk_wiz_0]
 
 update_compile_order -fileset sources_1
+
+if {$use_noncpu} {
+    set_property top kws_top_noncpu [current_fileset]
+    puts "Top module set to kws_top_noncpu"
+}
+
 launch_runs impl_1 -to_step write_bitstream -jobs $nproc
 wait_on_run impl_1
 

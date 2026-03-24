@@ -225,6 +225,21 @@ int main() {
             }
         }
 
+        // --- DEBUG: トリガー値とDCオフセットを確認 ---
+        {
+            char dbuf[64];
+            sprintf(dbuf, "TRIG=%d p_idx=%d\r\n", trigger_val, p_idx);
+            uart_prints(dbuf);
+            // プリロールバッファの直近16サンプルを出力（DC offset確認用）
+            uart_prints("PRE:");
+            for (int k = 0; k < 16; k++) {
+                int idx = (p_idx - 16 + k + 4000) % 4000;
+                sprintf(dbuf, " %d", (int)pre_roll[idx]);
+                uart_prints(dbuf);
+            }
+            uart_prints("\r\n");
+        }
+
         pg_lcd_set_pos(0, 6);
         pg_lcd_prints_color("1. Recording (1s)... ", C_RED);
 
